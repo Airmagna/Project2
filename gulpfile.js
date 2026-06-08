@@ -1,25 +1,25 @@
-import { readFileSync, rmSync } from "node:fs";
+import { readFileSync, rmSync } from 'node:fs';
 
-import gulp from "gulp";
-import plumber from "gulp-plumber";
-import * as dartSass from "sass";
-import gulpSass from "gulp-sass";
-import postcss from "gulp-postcss";
-import postUrl from "postcss-url";
-import lightningcss from "postcss-lightningcss";
-import { createGulpEsbuild } from "gulp-esbuild";
-import browserslistToEsbuild from "browserslist-to-esbuild";
-import sharp from "gulp-sharp-responsive";
-import svgo from "gulp-svgmin";
-import { stacksvg } from "gulp-stacksvg";
-import server from "browser-sync";
-import bemlinter from "gulp-html-bemlinter";
+import gulp from 'gulp';
+import plumber from 'gulp-plumber';
+import * as dartSass from 'sass';
+import gulpSass from 'gulp-sass';
+import postcss from 'gulp-postcss';
+import postUrl from 'postcss-url';
+import lightningcss from 'postcss-lightningcss';
+import { createGulpEsbuild } from 'gulp-esbuild';
+import browserslistToEsbuild from 'browserslist-to-esbuild';
+import sharp from 'gulp-sharp-responsive';
+import svgo from 'gulp-svgmin';
+import { stacksvg } from 'gulp-stacksvg';
+import server from 'browser-sync';
+import bemlinter from 'gulp-html-bemlinter';
 
 const { src, dest, watch, series, parallel } = gulp;
 const sass = gulpSass(dartSass);
-const PATH_TO_SOURCE = "./source/";
-const PATH_TO_DIST = "./build/";
-const PATH_TO_RAW = "./raw/";
+const PATH_TO_SOURCE = './source/';
+const PATH_TO_DIST = './build/';
+const PATH_TO_RAW = './raw/';
 const PATHS_TO_STATIC = [
   `${PATH_TO_SOURCE}fonts/**/*.{woff2,woff}`,
   `${PATH_TO_SOURCE}*.ico`,
@@ -47,20 +47,20 @@ export function lintBem() {
 export function processStyles() {
   return src(`${PATH_TO_SOURCE}styles/*.scss`, { sourcemaps: isDevelopment })
     .pipe(plumber())
-    .pipe(sass().on("error", sass.logError))
+    .pipe(sass().on('error', sass.logError))
     .pipe(
       postcss([
         postUrl([
           {
-            filter: "**/*",
-            assetsPath: "../",
+            filter: '**/*',
+            assetsPath: '../',
           },
           {
-            filter: "**/icons/**/*.svg",
+            filter: '**/icons/**/*.svg',
             url: (asset) =>
               asset.url.replace(
                 /icons\/(.+?)\.svg$/,
-                (match, p1) => `icons/stack.svg#${p1.replace(/\//g, "_")}`,
+                (match, p1) => `icons/stack.svg#${p1.replace(/\//g, '_')}`,
               ),
             multi: true,
           },
@@ -83,9 +83,9 @@ export function processScripts() {
     .pipe(
       gulpEsbuild({
         bundle: true,
-        format: "esm",
+        format: 'esm',
         // splitting: true,
-        platform: "browser",
+        platform: 'browser',
         minify: !isDevelopment,
         sourcemap: isDevelopment,
         target: browserslistToEsbuild(),
@@ -97,7 +97,7 @@ export function processScripts() {
 
 export function optimizeRaster() {
   const RAW_DENSITY = 2;
-  const TARGET_FORMATS = [undefined, "webp"]; // undefined — initial format: jpg or png
+  const TARGET_FORMATS = [undefined, 'webp']; // undefined — initial format: jpg or png
 
   function createOptionsFormat() {
     const formats = [];
@@ -141,10 +141,10 @@ export function copyStatic() {
 
 export function startServer() {
   const serveStatic = PATHS_TO_STATIC.filter(
-    (path) => path.startsWith("!") === false,
+    (path) => path.startsWith('!') === false,
   ).map((path) => {
-    const dir = path.replace(/(\/\*\*\/.*$)|\/$/, "");
-    const route = dir.replace(PATH_TO_SOURCE, "/");
+    const dir = path.replace(/(\/\*\*\/.*$)|\/$/, '');
+    const route = dir.replace(PATH_TO_SOURCE, '/');
 
     return { route, dir };
   });
@@ -160,7 +160,7 @@ export function startServer() {
       ui: false,
     },
     (err, bs) => {
-      bs.addMiddleware("*", (req, res) => {
+      bs.addMiddleware('*', (req, res) => {
         res.write(readFileSync(`${PATH_TO_DIST}404.html`));
         res.end();
       });
