@@ -1,0 +1,20 @@
+{
+  // Отключаем Prettier ТОЛЬКО для HTML, используем встроенный форматтер VS Code
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features",
+    "editor.formatOnSave": true
+  },
+
+  // Запрещаем VS Code автоматически добавлять закрывающие слэши в HTML
+  "html.autoClosingTags": false,
+
+  // (Опционально) Оставляем Prettier для JS и SCSS, если он там нужен
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  }
+}
