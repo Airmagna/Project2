@@ -1,22 +1,22 @@
 {
-  // Включаем автозакрытие тегов (для </div>, </p> и т.д.)
+  // Автозакрытие тегов
   "html.autoClosingTags": true,
-
-  // Отключаем автозакрытие кавычек (чтобы не мешало)
   "html.autoCreateQuotes": false,
 
-  // НАСТРОЙКИ ОТСТУПОВ (добавь эти строки)
+  // Настройки отступов
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
   "editor.detectIndentation": false,
 
-  // Prettier форматирует код при сохранении и убирает слэши
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
+  // Форматирование при сохранении
   "editor.formatOnSave": true,
 
-  // Настройки для JavaScript и SCSS
+  // 🔥 ВАЖНО: Для HTML используем встроенный форматтер VS Code (НЕ Prettier)
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+
+  // Prettier для JavaScript и SCSS
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
