@@ -10,20 +10,21 @@
 </head>
 
 <body class="page__body">
+
+  <!-- ХЕДЕР -->
+
   <header class="main-header">
-    <!-- ЛОГО -->
+    <!-- Лого -->
     <div class="main-header__logo logo">
-      <a class="main-header__logo-image" href="/">
-        <img src="images/icons/logo-mobile.svg" width="33" height="38" alt="Логотип Cat Energy">
-      </a>
-      <a class="main-header__logo-text" href="/">
-        <img src="images/icons/logo-text.svg" width="100" height="18" alt="Cat Energy">
+      <a class="logo__image" href="index.html">
+        <img class="logo__image--icon" src="images/icons/logo-mobile.svg" width="33" height="38"
+          alt="Логотип Cat Energy">
+        <img class="logo__image--text" src="images/icons/logo-text.svg" width="100" height="18" alt="Cat Energy">
       </a>
     </div>
-
-    <!-- НАВИГАЦИЯ -->
+    <!-- Навигация -->
     <nav class="main-nav">
-      <button class="main-nav__toggle" type="button">
+      <button class="main-nav__toggle button-burger" type="button">
         <span class="visually-hidden">Открыть меню</span>
       </button>
       <div class="main-nav__wrapper container">
@@ -42,8 +43,9 @@
     </nav>
   </header>
 
+  <!-- HERO -->
+
   <main class="main-container">
-    <!-- HERO -->
     <section class="hero">
       <div class="hero__wrapper">
         <h1 class="visually-hidden">
@@ -59,9 +61,11 @@
     </section>
 
     <!-- ДИЕТА -->
+
     <section class="diet-selector">
       <h2 class="visually-hidden">Выбор цели диеты</h2>
       <div class="diet-selector__wrapper">
+        <!-- Похудение -->
         <div class="diet-selector__weight-loss">
           <h3 class="diet-selector__title">Похудение</h3>
           <img src="images/icons/cat-weight-loss.svg" width="100" height="106" alt="Стройный кот">
@@ -79,7 +83,7 @@
             Каталог Slim
           </a>
         </div>
-
+        <!-- Набор массы -->
         <div class="diet-selector__muscle-gain">
           <h3 class="diet-selector__title">Набор массы</h3>
           <img src="images/icons/cat-muscle-gain.svg" width="134" height="100" alt="Мускулистый кот">
@@ -100,10 +104,12 @@
     </section>
 
     <!-- КАК ЭТО РАБОТАЕТ -->
+
     <section class="how-it-works">
-      <h2 class="visually-hidden">Как это работает</h2>
+      <h2 class="how-it-works__title">Как это работает</h2>
       <div class="how-it-works__wrapper">
         <ul class="how-it-works__list">
+
           <li class="how-it-works__item">
             <img class="how-it-works__icon" src="images/icons/natural-icon.svg" width="80" height="80"
               alt="Полезные вещества">
@@ -112,6 +118,7 @@
               вещества.
             </p>
           </li>
+
           <li class="how-it-works__item">
             <img class="how-it-works__icon" src="images/icons/consistency-icon.svg" width="80" height="80"
               alt="В виде порошка">
@@ -120,6 +127,7 @@
               готово.
             </p>
           </li>
+
           <li class="how-it-works__item">
             <img class="how-it-works__icon" src="images/icons/mealtime-icon.svg" width="80" height="80"
               alt="Замена приёма пищи">
@@ -128,6 +136,7 @@
               питание.
             </p>
           </li>
+
           <li class="how-it-works__item">
             <img class="how-it-works__icon" src="images/icons/changes-icon.svg" width="80" height="80" alt="Результат">
             <p class="how-it-works__description">
@@ -140,6 +149,7 @@
     </section>
 
     <!-- ЖИВОЙ ПРИМЕР -->
+
     <section class="results">
       <div class="results__wrapper">
         <h2 class="results__title">Живой пример</h2>
@@ -169,21 +179,27 @@
     </section>
   </main>
 
+  <!-- ФУТЕР -->
+
   <footer class="page-footer">
     <div class="page-footer__wrapper">
       <div class="page-footer__map map">
-        <img class="map__image" src="images/map.png" width="560" height="300" alt="Мы на карте">
+        <img class="map__image" src="images/map.png" width="100%" height="300" alt="Мы на карте">
       </div>
+      <!-- Контакты -->
       <div class="page-footer__contact contact">
         <p class="contact__title">Приглашаем к сотрудничеству дилеров!</p>
         <p class="contact__street">ул. Большая Конюшенная, д. 19/8</p>
         <p class="contact__city">Санкт-Петербург</p>
       </div>
-      <div class="page-footer__logo logo-text">
-        <a class="logo-text__image" href="/">
-          <img src="images/icons/logo-text.svg" width="100" height="18" alt="Cat Energy">
+      <!-- Лого -->
+      <div class="page-footer__logo logo-footer">
+        <a class="logo-footer__image" href="/">
+          <img class="logo-footer__image--text" src="images/icons/logo-text.svg" width="100" height="18"
+            alt="Cat Energy">
         </a>
       </div>
+      <!-- Социальные сети -->
       <div class="page-footer__social social">
         <ul class="social__list">
           <li class="social__item">
@@ -203,6 +219,7 @@
           </li>
         </ul>
       </div>
+      <!-- Копирайт -->
       <div class="page-footer__copyright copyright">
         <p class="copyright__text">Academy</p>
         <svg class="copyright__logo" width="27" height="34" viewBox="0 0 27 34" fill="none"
