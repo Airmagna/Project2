@@ -1,7 +1,7 @@
 # Личный проект «Кэт энерджи»
 
-* Студент: Airmagna.
-* Наставник: `Неизвестно`.
+- Студент: Airmagna.
+- Наставник: `Неизвестно`.
 
 ---
 
@@ -11,4 +11,3 @@ _Не удаляйте и не обращайте внимание на файл
 _`.github`, `.editorconfig`, `.eslintrc`, `.gitattributes`, `.gitignore`, `.linthtmlrc`, `.stylelintrc`, `.gulpfile.js`, `svgo.config.js` `package.json`, `package-lock.json`._
 
 ---
-
