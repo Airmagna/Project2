@@ -1,0 +1,251 @@
+<!doctype html>
+<html class="page" lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CAT ENERGY</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="styles/styles.css">
+  <script src="scripts/index.js" defer></script>
+</head>
+
+<body class="page__body">
+
+  <!-- ХЕДЕР -->
+
+  <header class="main-header">
+    <!-- Лого -->
+    <div class="main-header__logo logo">
+      <a class="logo__image" href="index.html">
+        <img class="logo__image logo__image--icon" src="images/icons/logo-mobile.svg" width="33" height="38"
+          alt="Логотип Cat Energy">
+        <img class="logo__image logo__image--text" src="images/icons/logo-text.svg" width="100" height="18"
+          alt="Cat Energy">
+      </a>
+    </div>
+    <!-- Навигация -->
+    <nav class="main-nav">
+      <button class="main-nav__toggle button-burger" type="button">
+        <span class="visually-hidden">Открыть меню</span>
+      </button>
+      <div class="main-nav__wrapper container">
+        <ul class="main-nav__list site-list">
+          <li class="site-list__item site-list__item--current">
+            <a href="index.html">Главная</a>
+          </li>
+          <li class="site-list__item">
+            <a href="catalog.html">Каталог продукции</a>
+          </li>
+          <li class="site-list__item">
+            <a href="select.html">Подбор программы</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+
+  <main class="main-container">
+    <section class="hero">
+      <div class="hero__wrapper">
+        <h1 class="visually-hidden">
+          Магазин диетического питания для котов
+        </h1>
+        <h2 class="hero__title">Функциональное питание для котов</h2>
+        <p class="hero__slogan">Занялся собой? Займись котом!</p>
+        <button class="hero__button hero__button--program" type="button">
+          Подобрать программу
+        </button>
+        <picture>
+          <source width="550" height="500" type="image/png" media="(min-width: 700px)"
+            srcset="images/hero-glass@1x.png ,images/hero-glass@2x.png">
+          <source width="700" height="600" type="image/png" media="(min-width: 700px)"
+            srcset="images/hero-glass-tablet@1x.png ,images/hero-glass-tablet@2x.png">
+          <img class="hero__image" src="images/hero-glass-mobile@1x.png" srcset="images/hero-glass-mobile@2x.png"
+            width="280" height="270" alt="Стакан Cat Energy">
+        </picture>
+      </div>
+    </section>
+
+    <!-- ДИЕТА -->
+
+    <section class="diet-selector">
+      <h2 class="visually-hidden">Выбор цели диеты</h2>
+      <div class="diet-selector__wrapper">
+        <!-- Похудение -->
+        <div class="diet-selector__weight-loss">
+          <h3 class="diet-selector__title">Похудение</h3>
+          <img src="images/icons/cat-weight-loss.svg" width="100" height="106" alt="Стройный кот">
+          <p class="diet-selector__description">
+            Ваш кот весит больше собаки и почти утратил способность лазить по
+            деревьям? Пора на диету! Cat Energy Slim поможет вашему питомцу
+            сбросить лишний вес.
+          </p>
+          <a class="diet-selector__link" href="#">
+            <svg class="diet-selector__icon" width="24" height="12" viewBox="0 0 24 12" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <line y1="6" x2="18" y2="6" stroke="black" stroke-width="2" />
+              <path d="M24 6L17.25 11.1962L17.25 0.803848L24 6Z" fill="black" />
+            </svg>
+            Каталог Slim
+          </a>
+        </div>
+        <!-- Набор массы -->
+        <div class="diet-selector__muscle-gain">
+          <h3 class="diet-selector__title">Набор массы</h3>
+          <img src="images/icons/cat-muscle-gain.svg" width="134" height="100" alt="Мускулистый кот">
+          <p class="diet-selector__description">
+            Заработать авторитет среди дворовых котов и даже собак? Серия Cat
+            Energy Pro поможет вашему коту нарастить необходимые мышцы!
+          </p>
+          <a class="diet-selector__link" href="#">
+            <svg class="diet-selector__icon" width="24" height="12" viewBox="0 0 24 12" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <line y1="6" x2="18" y2="6" stroke="black" stroke-width="2" />
+              <path d="M24 6L17.25 11.1962L17.25 0.803848L24 6Z" fill="black" />
+            </svg>
+            Каталог Pro
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- КАК ЭТО РАБОТАЕТ -->
+
+    <section class="how-it-works">
+      <h2 class="how-it-works__title">Как это работает</h2>
+      <div class="how-it-works__wrapper">
+        <ul class="how-it-works__list">
+
+          <li class="how-it-works__item">
+            <img class="how-it-works__icon" src="images/icons/natural-icon.svg" width="80" height="80"
+              alt="Полезные вещества">
+            <p class="how-it-works__description">
+              Функциональное питание содержит только полезные питательные
+              вещества.
+            </p>
+          </li>
+
+          <li class="how-it-works__item">
+            <img class="how-it-works__icon" src="images/icons/consistency-icon.svg" width="80" height="80"
+              alt="В виде порошка">
+            <p class="how-it-works__description">
+              Выпускается в виде порошка, который нужно лишь залить кипятком и
+              готово.
+            </p>
+          </li>
+
+          <li class="how-it-works__item">
+            <img class="how-it-works__icon" src="images/icons/mealtime-icon.svg" width="80" height="80"
+              alt="Замена приёма пищи">
+            <p class="how-it-works__description">
+              Замените один-два приема обычной еды на наше функциональное
+              питание.
+            </p>
+          </li>
+
+          <li class="how-it-works__item">
+            <img class="how-it-works__icon" src="images/icons/changes-icon.svg" width="80" height="80" alt="Результат">
+            <p class="how-it-works__description">
+              Уже через месяц наслаждайтесь изменениями к лучшему вашего
+              питомца!
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ЖИВОЙ ПРИМЕР -->
+
+    <section class="results">
+      <div class="results__wrapper">
+        <h2 class="results__title">Живой пример</h2>
+        <p class="results__description">
+          Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на
+          Cat Energy Slim. Отличный результат без изнуряющих тренировок! При
+          этом он не менял своих привычек и по-прежнему спит по 16 часов в
+          день.
+        </p>
+        <div class="results__stats">
+          <fieldset class="results__stat">
+            <legend>Снижение веса</legend>
+            <div class="results__stat-value">5 КГ</div>
+          </fieldset>
+          <fieldset class="results__stat">
+            <legend>Затрачено времени</legend>
+            <div class="results__stat-value">60 ДНЕЙ</div>
+          </fieldset>
+        </div>
+        <img class="results__image" src="images/cat-slider.png" width="560" height="520"
+          alt="Кот Борис после похудения">
+        <div class="results__price">
+          <span class="results__price-label">Затраты на питание:</span>
+          <span class="results__price-value">15 000 руб.</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ФУТЕР -->
+
+  <footer class="page-footer">
+    <div class="page-footer__wrapper">
+      <div class="page-footer__map map">
+        <img class="map__image" src="images/map.png" width="500" height="300" alt="Мы на карте">
+      </div>
+      <!-- Контакты -->
+      <div class="page-footer__contact contact">
+        <p class="contact__title">Приглашаем к сотрудничеству дилеров!</p>
+        <p class="contact__street">ул. Большая Конюшенная, д. 19/8</p>
+        <p class="contact__city">Санкт-Петербург</p>
+      </div>
+      <!-- Лого -->
+      <div class="page-footer__logo logo-footer">
+        <a class="logo-footer__image" href="/">
+          <img class="logo-footer__image logo-footer__image--text" src="images/icons/logo-text.svg" width="100"
+            height="18" alt="Cat Energy">
+        </a>
+      </div>
+      <!-- Социальные сети -->
+      <div class="page-footer__social social">
+        <ul class="social__list">
+          <li class="social__item">
+            <a class="social__link social__link--vk" href="#">
+              <span class="visually-hidden">ВКонтакте</span>
+            </a>
+          </li>
+          <li class="social__item">
+            <a class="social__link social__link--youtube" href="#">
+              <span class="visually-hidden">YouTube</span>
+            </a>
+          </li>
+          <li class="social__item">
+            <a class="social__link social__link--telegram" href="#">
+              <span class="visually-hidden">Telegram</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- Копирайт -->
+      <div class="page-footer__copyright copyright">
+        <p class="copyright__text">Academy</p>
+        <svg class="copyright__logo" width="27" height="34" viewBox="0 0 27 34" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_115966_191)">
+            <path
+              d="M13.6426 0.0157537L13.5 0L0 1.40733V26.0129L13.5 34L27 26.0129V1.40733L13.6426 0.0157537ZM25.2344 25.0151L13.5 31.9573L1.76561 25.0151V14.9293L13.4507 21.8451L13.4701 23.0984L5.45351 18.3548L5.44295 19.5801L13.4894 24.3885L13.5088 25.675L5.46408 20.9174L5.45351 22.1427L13.5 26.9511L21.6239 22.1182V20.8929V16.909L25.2432 14.7595L25.2344 25.0151ZM25.2344 13.4519L22.0147 15.3319L20.5325 16.2071L13.4666 12.0201L13.456 13.2454L19.4957 16.818L19.4429 16.8495L19.3126 16.9247L18.4536 17.4166L13.4666 14.4689L13.456 15.6942L17.3921 18.0222L16.4591 18.6314L16.438 18.6436L13.4666 16.902L13.456 18.1273L15.4029 19.2615L13.4155 20.4483L1.7973 13.5762L13.4349 6.61831L25.2344 13.4519ZM25.2344 12.2266L13.4401 5.31075L1.76561 12.2196V2.9897L13.5 1.76442L25.2344 2.9897V12.2266Z"
+              fill="#666666" />
+          </g>
+          <defs>
+            <clippath id="clip0-115966-191">
+              <rect width="27" height="34" fill="white" />
+            </clippath>
+          </defs>
+        </svg>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
