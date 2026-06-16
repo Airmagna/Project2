@@ -1,0 +1,26 @@
+{
+  // Автозакрытие тегов
+  "html.autoClosingTags": true,
+  "html.autoCreateQuotes": false,
+
+  // Настройки отступов
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+
+  // Форматирование при сохранении
+  "editor.formatOnSave": true,
+
+  // 🔥 ВАЖНО: Для HTML используем встроенный форматтер VS Code (НЕ Prettier)
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+
+  // Prettier для JavaScript и SCSS
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
