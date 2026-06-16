@@ -56,7 +56,14 @@
         <button class="hero__button hero__button--program" type="button">
           Подобрать программу
         </button>
-        <img class="hero__image" src="images/glass-hero.png" width="550" height="600" alt="Стакан Cat Energy">
+        <picture>
+          <source width="550" height="500" type="image/png" media="(min-width: 700px)"
+            srcset="images/hero-glass@1x.png ,images/hero-glass@2x.png">
+          <source width="700" height="600" type="image/png" media="(min-width: 700px)"
+            srcset="images/hero-glass-tablet@1x.png ,images/hero-glass-tablet@2x.png">
+          <img class="hero__image" src="images/hero-glass-mobile@1x.png" srcset="images/hero-glass-mobile@2x.png"
+            width="280" height="270" alt="Стакан Cat Energy">
+        </picture>
       </div>
     </section>
 
