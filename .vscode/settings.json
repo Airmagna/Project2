@@ -16,6 +16,10 @@
     "editor.defaultFormatter": "vscode.html-language-features"
   },
 
+  // 🆕 НОВОЕ: Форматирование атрибутов HTML
+  "html.format.wrapAttributes": "force-aligned",
+  "html.format.wrapLineLength": 0,
+
   // Prettier для JavaScript и SCSS
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
