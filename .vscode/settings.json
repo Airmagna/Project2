@@ -11,14 +11,13 @@
   // Форматирование при сохранении
   "editor.formatOnSave": true,
 
-  // 🔥 ВАЖНО: Для HTML используем встроенный форматтер VS Code (НЕ Prettier)
+  // 🔥 Для HTML используем встроенный форматтер VS Code (НЕ Prettier)
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
   },
 
-  // 🆕 НОВОЕ: Форматирование атрибутов HTML
-  "html.format.wrapAttributes": "force-aligned",
-  "html.format.wrapLineLength": 0,
+  // 🔥 Форматирование атрибутов HTML
+  "html.format.wrapAttributes": "force-expand-multiline",
 
   // Prettier для JavaScript и SCSS
   "[javascript]": {
@@ -28,5 +27,11 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
-  "files.eol": "\n"
+  // 🔥 КОНЦЫ СТРОК (LF вместо CRLF)
+  "files.eol": "\n",
+
+  // 🔥 🔥 🔥 ДОБАВЛЕНО: АВТОМАТИЧЕСКОЕ ИСПРАВЛЕНИЕ ФАЙЛОВ
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true
 }
