@@ -1,0 +1,40 @@
+.news__title {
+  font-family: $second-font;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 24px;
+  text-align: center;
+  color: #000;
+}
+
+.news__description {
+  font-family: $second-font;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #000000;
+}
+
+.button--news {
+  font-family: $second-font;
+  padding: 0;
+  padding: 14px 26px;
+  width: 280px;
+  font-size: 20px;
+  line-height: 26px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+}
+
+.field--catalog {
+  border: 1px solid #cdcdcd;
+  padding: 13px;
+  width: 280px;
+  font-family: $second-font;
+  font-weight: 400;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #444444;
+}

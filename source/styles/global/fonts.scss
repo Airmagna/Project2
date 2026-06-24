@@ -11,11 +11,24 @@
 //   src: url("../../fonts/oswald/oswaldregular.woff2") format("woff2");
 //   font-display: swap;
 // }
+
 @include font-face(
-  lato,
+  "Lato",
+  400,
   url("../../fonts/lato/Lato-Regular.woff2") format("woff2")
 );
 @include font-face(
-  oswald,
+  "Lato",
+  700,
+  url("../../fonts/lato/Lato-Regular.woff2") format("woff2")
+);
+@include font-face(
+  "Oswald",
+  400,
+  url("../../fonts/oswald/oswaldregular.woff2") format("woff2")
+);
+@include font-face(
+  "Oswald",
+  700,
   url("../../fonts/oswald/oswaldregular.woff2") format("woff2")
 );
