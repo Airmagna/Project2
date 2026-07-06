@@ -1,0 +1,27 @@
+.hero__text {
+  background: rgba(104, 183, 56, 0.85);
+  width: 320px;
+  height: 302px;
+}
+
+.hero__title {
+  font-family: $second-font;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 36px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.hero__slogan {
+  font-family: $second-font;
+  font-size: 14px;
+  line-height: 14px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.hero__button {
+  padding: 10px 44px;
+  width: 280px;
+}

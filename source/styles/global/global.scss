@@ -1,1 +1,7 @@
 /* здесь используйте глобальные селекторы img, body, html и так далее */
+.page__body {
+  font-family: $primary-font;
+  font-weight: 400;
+  font-display: swap;
+  color: $base-color-text;
+}
