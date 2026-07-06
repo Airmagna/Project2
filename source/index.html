@@ -118,46 +118,64 @@
   <main class="main-container">
     <section class="hero">
       <div class="hero__wrapper">
-        <div class="hero__text">
-          <h1 class="visually-hidden">
-            Магазин диетического питания для котов
-          </h1>
+
+        <!-- ЛЕВАЯ КОЛОНКА: Текст, слоган, кнопка + стакан (моб/планшет) -->
+        <div class="hero__content">
+          <h1 class="visually-hidden">Магазин диетического питания для котов</h1>
           <h2 class="hero__title">Функциональное питание для котов</h2>
           <p class="hero__slogan">Занялся собой? Займись котом!</p>
+
+          <!--  Стакан для МОБИЛЬНОГО и ПЛАНШЕТА -->
+          <picture class="hero__picture hero__picture--mobile">
+            <source
+              width="550"
+              height="500"
+              type="image/png"
+              media="(min-width: 1200px)"
+              srcset="images/hero-glass@1x.png 1x, images/hero-glass@2x.png 2x"
+            >
+            <source
+              width="700"
+              height="600"
+              type="image/png"
+              media="(min-width: 768px)"
+              srcset="images/hero-glass-tablet@1x.png 1x, images/hero-glass-tablet@2x.png 2x"
+            >
+            <img
+              class="hero__image"
+              src="images/hero-glass-mobile@1x.png"
+              srcset="images/hero-glass-mobile@2x.png 2x"
+              width="280"
+              height="270"
+              alt="Стакан Cat Energy"
+            >
+          </picture>
+          <button
+            class="hero__button hero__button--program button"
+            type="button"
+          >
+            Подобрать программу
+          </button>
         </div>
 
-        <picture>
-          <source
-            width="550"
-            height="500"
-            type="image/png"
-            media="(min-width: 1200px)"
-            srcset="images/hero-glass@1x.png 1x, images/hero-glass@2x.png 2x"
-          >
-          <source
-            width="700"
-            height="600"
-            type="image/png"
-            media="(min-width: 768px)"
-            srcset="images/hero-glass-tablet@1x.png 1x, images/hero-glass-tablet@2x.png 2x"
-          >
-          <img
-            class="hero__image"
-            src="images/hero-glass-mobile@1x.png"
-            srcset="images/hero-glass-mobile@2x.png 2x"
-            width="280"
-            height="270"
-            alt="Стакан Cat Energy"
-          >
-        </picture>
-        <button
-          class="hero__button hero__button--program button"
-          type="button"
-        >
-          Подобрать программу
-        </button>
+        <!-- ПРАВАЯ КОЛОНКА: Только для ДЕСКТОПА -->
+        <div class="hero__visual">
+          <div class="hero__background"></div><!-- Фон с котом -->
+          <!--  Стакан для ДЕСКТОПА (позиция абсолют) -->
+          <picture class="hero__picture hero__picture--desktop">
+            <img
+              src="images/hero-glass@1x.png"
+              srcset="images/hero-glass@2x.png 2x"
+              width="550"
+              height="500"
+              alt="Стакан Cat Energy"
+            >
+          </picture>
+        </div>
+
       </div>
     </section>
+
 
     <!-- ДИЕТА -->
 
@@ -171,33 +189,26 @@
           <picture>
             <source
               media="(min-width: 1200px)"
-              srcset="images/icons/cat-slim.svg"
+              srcset="../icons/stack.svg#cat-slim"
               type="image/svg+xml"
               width="100"
               height="106"
             >
             <source
               media="(min-width: 768px)"
-              srcset="images/icons/cat-slim.svg"
+              srcset="../icons/stack.svg#cat-slim"
               type="image/svg+xml"
               width="200"
               height="210"
             >
             <img
               class="diet-selector__icon"
-              src="images/icons/cat-slim.svg"
+              src="../icons/stack.svg#cat-slim"
               width="50"
               height="54"
               alt="Логотип стройный кот"
             >
           </picture>
-
-          <!-- <img
-                src="images/icons/cat-weight-loss.svg"
-                width="100"
-                height="106"
-                alt="Стройный кот"
-            > -->
           <p class="diet-selector__description">
             Ваш кот весит больше собаки и почти утратил способность лазить по
             деревьям? Пора на диету! Cat Energy Slim поможет вашему питомцу
@@ -231,26 +242,26 @@
           </a>
         </div>
         <!-- Набор массы -->
-        <div class="diet-selector__musclee-gain">
+        <div class="diet-selector__muscle-gain">
           <h3 class="diet-selector__title">Набор массы</h3>
           <picture>
             <source
               media="(min-width: 1200px)"
-              srcset="images/icons/cat-muscle.svg"
+              srcset="../icons/stack.svg#cat-muscle"
               type="image/svg+xml"
               width="134"
               height="100"
             >
             <source
               media="(min-width: 768px)"
-              srcset="images/icons/cat-muscle.svg"
+              srcset="../icons/stack.svg#cat-muscle"
               type="image/svg+xml"
               width="270"
               height="200"
             >
             <img
               class="diet-selector__icon"
-              src="images/icons/cat-muscle.svg"
+              src="../icons/stack.svg#cat-muscle"
               width="68"
               height="50"
               alt="Логотип мощный кот"
@@ -302,13 +313,15 @@
         <ul class="how-it-works__list">
 
           <li class="how-it-works__item">
-            <img
-              class="how-it-works__icon"
-              src="images/icons/list-icon.svg"
-              width="30"
-              height="32"
-              alt="Логотип функциональное питание"
-            >
+            <div class="how-it-works__icon-wrapper">
+              <img
+                class="how-it-works__icon"
+                src="../icons/stack.svg#list-icon"
+                width="30"
+                height="32"
+                alt="Логотип функциональное питание"
+              >
+            </div>
             <p class="how-it-works__description">
               Функциональное питание содержит только полезные питательные
               вещества.
@@ -316,13 +329,15 @@
           </li>
 
           <li class="how-it-works__item">
-            <img
-              class="how-it-works__icon"
-              src="images/icons/powder-icon.svg"
-              width="30"
-              height="32"
-              alt="Логотип структура"
-            >
+            <div class="how-it-works__icon-wrapper">
+              <img
+                class="how-it-works__icon"
+                src="../icons/stack.svg#powder-icon"
+                width="30"
+                height="32"
+                alt="Логотип структура"
+              >
+            </div>
             <p class="how-it-works__description">
               Выпускается в виде порошка, который нужно лишь залить кипятком и
               готово.
@@ -330,13 +345,15 @@
           </li>
 
           <li class="how-it-works__item">
-            <img
-              class="how-it-works__icon"
-              src="images/icons/eat-icon.svg"
-              width="30"
-              height="32"
-              alt="Логотип приёма пищи"
-            >
+            <div class="how-it-works__icon-wrapper">
+              <img
+                class="how-it-works__icon"
+                src="../icons/stack.svg#eat-icon"
+                width="30"
+                height="32"
+                alt="Логотип приёма пищи"
+              >
+            </div>
             <p class="how-it-works__description">
               Замените один-два приема обычной еды на наше функциональное
               питание.
@@ -344,13 +361,15 @@
           </li>
 
           <li class="how-it-works__item">
-            <img
-              class="how-it-works__icon"
-              src="images/icons/time-icon.svg"
-              width="30"
-              height="32"
-              alt="Логотип результат"
-            >
+            <div class="how-it-works__icon-wrapper">
+              <img
+                class="how-it-works__icon"
+                src="../icons/stack.svg#time-icon"
+                width="30"
+                height="32"
+                alt="Логотип результат"
+              >
+            </div>
             <p class="how-it-works__description">
               Уже через месяц наслаждайтесь изменениями к лучшему вашего
               питомца!
@@ -436,21 +455,21 @@
           <source
             type="image/png"
             media="(min-width: 1200px)"
-            srcset="images/map-desktop@1x.png 1x, images/map-desktop@2x.png 2x"
+            srcset="images/map-desktop@1x.jpg 1x, images/map-desktop@2x.jpg 2x"
             width="1440"
             height="400"
           >
           <source
             type="image/png"
             media="(min-width: 768px)"
-            srcset="images/map-tablet@1x.png 1x, images/map-tablet@2x.png 2x"
+            srcset="images/map-tablet@1x.jpg 1x, images/map-tablet@2x.jpg 2x"
             width="768"
             height="400"
           >
           <img
             class="map__image"
-            src="images/image-mobile@1x.png"
-            srcset="images/map-mobile@2x.png 2x"
+            src="images/map-mobile@1x.jpg"
+            srcset="images/map-mobile@2x.jpg 2x"
             width="320"
             height="360"
             alt="Локация магазина на карте"
@@ -464,13 +483,13 @@
             width="140"
             height="106"
           >
-          <img
+          <!-- <img
             class="map__icon"
             src="images/icons/map-pin.svg"
             width="58"
             height="54"
             alt="Логотип точка на карте"
-          >
+          > -->
         </picture>
       </div>
 

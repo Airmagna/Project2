@@ -2,17 +2,33 @@
 
 // ЦВЕТА
 
+// special-grey-2
 $color-text-title: #666666;
-$base-color-text: #444444;
-$bg-basic-green: #68b738;
-$color-error: #ff8282;
-$color-text-dark: #222222;
-$bg-basic-grey: #f2f2f2;
-$-color-text-title: #666666;
+$-special-grey: #cdcdcd;
 
-// -special-grey-2: #ebebeb;
-// -special-grey: #cdcdcd;
-// -basic-green-2: #5eaa2f;
+// special-dark-grey
+$base-color-text: #444444;
+// special-dark-grey-2
+$color-text-dark: #222222;
+
+// basic-green
+$bg-basic-green: #68b738;
+$-basic-green-2: #5eaa2f;
+
+// basic-grey
+$bg-basic-grey: #f2f2f2;
+
+$color-error: #ff8282;
+$color-text-black: #000000;
+$color-text-white: #ffffff;
+
+$background-green: rgba(104, 183, 56, 0.85);
+$background-results-gray: #eaeaea;
+
+$promo-overlay: linear-gradient(
+  rgba(104, 183, 56, 0.85),
+  rgba(104, 183, 56, 0.85)
+);
 
 // ШРИФТЫ
 

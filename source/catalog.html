@@ -523,7 +523,7 @@
             <h3 class="catalog__item-title">ПОКАЗАТЬ ЕЩЁ 100500 ТОВАРОВ</h3>
             <p class="catalog__item-subtitle">На самом деле вкусов гораздо больше!</p>
             <button
-              class="catalog__button button button--show-all"
+              class="catalog__button-all button"
               type="button"
             >
               ПОКАЗАТЬ ВСЕ
@@ -653,7 +653,7 @@
             for="news-email"
           >Ваша почта</label>
           <input
-            class="field field--catalog"
+            class="news__field field--catalog"
             placeholder="кuklachev@gmail.com"
             type="email"
             name="news-email"
@@ -661,7 +661,7 @@
             required
           >
           <button
-            class="button button--news"
+            class="button news__button"
             type="submit"
           >
             Подписаться
@@ -681,30 +681,48 @@
         <p class="contact__street">ул. Большая Конюшенная, д. 19/8</p>
         <p class="contact__city">Санкт-Петербург</p>
       </div>
-      <picture>
-        <source
-          type="image/png"
-          media="(min-width: 1200px)"
-          srcset="images/map-desktop@1x.png 1x, images/map-desktop@2x.png 2x"
-          width="1440"
-          height="400"
-        >
-        <source
-          type="image/png"
-          media="(min-width: 768px)"
-          srcset="images/map-tablet@1x.png 1x, images/map-tablet@2x.png 2x"
-          width="768"
-          height="400"
-        >
-        <img
-          src="images/image-mobile@1x.png"
-          srcset="images/map-mobile@2x.png 2x"
-          width="320"
-          height="360"
-          alt="Локация магазина на карте"
-        >
-      </picture>
-
+      <div class="page-footer__map map">
+        <picture>
+          <source
+            type="image/png"
+            media="(min-width: 1200px)"
+            srcset="images/map-desktop@1x.jpg 1x, images/map-desktop@2x.jpg 2x"
+            width="1440"
+            height="400"
+          >
+          <source
+            type="image/png"
+            media="(min-width: 768px)"
+            srcset="images/map-tablet@1x.jpg 1x, images/map-tablet@2x.jpg 2x"
+            width="768"
+            height="400"
+          >
+          <img
+            class="map__image"
+            src="images/map-mobile@1x.jpg"
+            srcset="images/map-mobile@2x.jpg 2x"
+            width="320"
+            height="360"
+            alt="Локация магазина на карте"
+          >
+        </picture>
+        <picture>
+          <source
+            media="(min-width: 768px)"
+            srcset="images/icons/map-pin.svg"
+            type="image/svg+xml"
+            width="140"
+            height="106"
+          >
+          <!-- <img
+                  class="map__icon"
+                  src="images/icons/map-pin.svg"
+                  width="58"
+                  height="54"
+                  alt="Логотип точка на карте"
+                > -->
+        </picture>
+      </div>
       <!-- Лого -->
       <div class="page-footer__logo logo-footer">
         <a

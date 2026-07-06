@@ -1,22 +1,45 @@
-.how-it-works__title {
-  font-family: $second-font;
-  font-size: 36px;
-  line-height: 40px;
-  text-align: center;
-  color: #000000;
-}
+.how-it-works {
+  // ЗАГОЛОВОК СЕКЦИИ
+  &__title {
+    margin: 0;
+    font-family: $second-font;
+    font-size: 36px;
+    line-height: 40px;
+    text-align: center;
+    color: $color-text-black;
+  }
 
-.how-it-works__list {
-  font-size: 14px;
-  line-height: 18px;
-  list-style: none;
-}
+  // СПИСОК ПРЕИМУЩЕСТВ
+  &__list {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    line-height: 18px;
+    list-style: none;
+    color: $base-color-text;
+  }
+  // Зелёный фон + центрирование
+  &__icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: $bg-basic-green;
+    margin-bottom: 20px;
+  }
+  // Иконка без фона, только размеры
+  &__icon {
+    width: 30px;
+    height: 32px;
+    display: block;
+  }
 
-.results__price {
-  font-family: $second-font;
-  font-size: 14px;
-  line-height: 20px;
-  text-transform: uppercase;
-  text-align: center;
-  color: #000000;
+  // Планшет и десктоп
+  @media (min-width: 768px) {
+    &__icon-wrapper {
+      width: 80px;
+      height: 80px;
+    }
+  }
 }

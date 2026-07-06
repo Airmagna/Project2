@@ -1,17 +1,25 @@
-.contact__title {
-  font-family: $second-font;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 20px;
-  text-transform: uppercase;
-  color: #111111;
-}
+// БЛОК: КОНТАКТЫ
 
-.contact__street,
-.contact__city {
-  font-family: $primary-font;
+.contact {
   font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  color: #444444;
+
+  // ЗАГОЛОВОК КОНТАКТОВ
+  &__title {
+    margin: 0;
+    font-family: $second-font;
+    font-size: 16px;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: $color-text-black;
+  }
+
+  // АДРЕС И ГОРОД
+  &__street,
+  &__city {
+    margin: 0;
+    font-family: $primary-font;
+    font-size: 14px;
+    line-height: 20px;
+    color: $base-color-text;
+  }
 }

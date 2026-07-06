@@ -1,50 +1,43 @@
-.catalog__title {
-  font-family: $second-font;
-  font-size: 36px;
-  line-height: 36px;
-  color: #000000;
-}
+// БЛОК: КАТАЛОГ ПРОДУКЦИИ
 
-.catalog__item-title {
-  font-family: $second-font;
-  font-size: 16px;
-  line-height: 16px;
-  text-transform: uppercase;
-  text-align: center;
-  color: #222222;
-}
+.catalog {
+  &__title {
+    font-family: $second-font;
+    font-size: 36px;
+    line-height: 36px;
+    color: $color-text-black;
+  }
 
-.catalog__item-specs {
-  font-size: 12px;
-  line-height: 16px;
-  color: #444444;
-}
+  &__item-title {
+    font-family: $second-font;
+    font-size: 16px;
+    line-height: 16px;
+    text-transform: uppercase;
+    text-align: center;
+    color: $color-text-dark;
+  }
+  // Характеристики товара (масса, вкус, цена)
+  &__item-specs {
+    font-size: 12px;
+    line-height: 16px;
+    color: $base-color-text;
+  }
 
-.catalog__button {
-  font-size: 16px;
-  line-height: 20px;
-  text-transform: uppercase;
-  text-align: center;
-  color: #ffffff;
-  padding: 6px 109px;
-  width: 280px;
-}
-
-.button--show-all {
-  padding: 20px 94px;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 20px;
-  text-transform: uppercase;
-  text-align: center;
-  background-color: #f2f2f2;
-}
-
-.catalog__item-subtitle {
-  font-family: $primary-font;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 16px;
-  text-align: center;
-  color: #444444;
+  &__item-specs,
+  &__item-subtitle {
+    font-size: 12px;
+    line-height: 16px;
+    color: $base-color-text;
+  }
+  // вкусов еще больше
+  &__item-subtitle {
+    font-family: $primary-font;
+    text-align: center;
+  }
+  //Показать весь каталог
+  &__button-all {
+    padding: 20px 94px;
+    background-color: $bg-basic-grey;
+    color: $base-color-text;
+  }
 }

@@ -1,21 +1,20 @@
-// .main-nav {
-// }
-
-// .main-nav__toggle {
-// }
-
-// .button-burger {
-// }
-
-// .main-nav__wrapper {
-// }
-
-.main-nav__list {
-  font-family: $primary-font;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 20px;
-  text-transform: uppercase;
-  color: #000000;
-  list-style: none;
+.main-nav {
+  // МЕНЮ НАВИГАЦИИ
+  &__list {
+    font-family: $primary-font;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: $color-text-black;
+    list-style: none;
+  }
+  // МЕНЮ БУРГЕР
+  &__toggle {
+    background: url(../../icons/burger_menu.svg);
+    cursor: pointer;
+    border: none;
+    margin: 0;
+    padding: 12px;
+  }
 }

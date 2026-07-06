@@ -1,28 +1,32 @@
-.diet-selector__title {
-  font-family: $second-font;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 37px;
-  text-transform: uppercase;
-  color: #000000;
-}
+// БЛОК: ВЫБОР ДИЕТЫ
 
-.diet-selector__description {
-  font-size: 14px;
-  line-height: 18px;
-}
-
-.diet-selector__link {
-  font-family: $second-font;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 16px;
-  text-transform: uppercase;
-  text-align: center;
-  color: #000000;
-}
-
-.diet-selector__weight-loss,
-.diet-selector__musclee-gain {
-  background-color: #f2f2f2;
+.diet-selector {
+  &__title,
+  &__link {
+    font-family: $second-font;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $color-text-black;
+  }
+  // ЗАГОЛОВОК КАРТОЧКИ (ПОХУДЕНИЕ / НАБОР МАССЫ)
+  &__title {
+    font-size: 24px;
+    line-height: 37px;
+  }
+  // ОПИСАНИЕ
+  &__description {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  // ССЫЛКА "КАТАЛОГ SLIM / PRO"
+  &__link {
+    font-size: 16px;
+    line-height: 16px;
+    text-align: center;
+  }
+  // ФОН КАРТОЧЕК
+  &__weight-loss,
+  &__muscle-gain {
+    background-color: $bg-basic-grey;
+  }
 }
