@@ -2,6 +2,7 @@
 
 .additional-products {
   font-weight: 400;
+
   // ЗАГОЛОВОК СЕКЦИИ
   &__title {
     padding: 0;
@@ -11,6 +12,7 @@
     text-align: center;
     color: $color-text-black;
   }
+
   // НАЗВАНИЕ ТОВАРА
   &__name {
     font-family: $second-font;
@@ -20,6 +22,7 @@
     text-align: center;
     color: $color-text-dark;
   }
+
   // ПРОДУКТ И ЕГО ХАРАКТЕРИСТИКИ
   &__row {
     font-family: $primary-font;
@@ -27,14 +30,31 @@
     line-height: 14px;
     color: $base-color-text;
   }
+
   // ПРОМО-БЛОК (ПОДАРОК)
   &__promo {
     position: relative;
     padding: 56px 0;
     text-align: center;
     overflow: hidden;
+
+    //  ПСЕВДОЭЛЕМЕНТ ДЛЯ ИКОНКИ ПОДАРКА
+    &::before {
+      content: "";
+      display: block;
+      width: 78px;
+      height: 80px;
+      margin: 0 auto 32px;
+      background-image: url("../../icons/stack.svg#gift-icon");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      position: relative;
+      z-index: 1; // Поверх фона
+    }
   }
-  // Фон промо-блока: картинка + зелёный оверлей
+
+  // ФОН ПРОМО-БЛОКА
   &__promo-bg {
     position: absolute;
     top: 0;
@@ -57,35 +77,36 @@
   // Планшет
   @media (min-width: 768px) {
     &__promo-bg {
-      background-image: $promo-overlay, url("../../images/promo-cat-tablet@1x.jpg");
+      background-image:
+        $promo-overlay, url("../../images/promo-cat-tablet@1x.jpg");
+    }
+    //  Планшет: увеличиваем иконку подарка
+    &__promo::before {
+      width: 80px;
+      height: 83px;
+      margin-bottom: 40px;
     }
   }
   // Планшет Retina
   @media (min-width: 768px) and (min-resolution: 192dpi) {
     &__promo-bg {
-      background-image: $promo-overlay, url("../../images/promo-cat-tablet@2x.jpg");
+      background-image:
+        $promo-overlay, url("../../images/promo-cat-tablet@2x.jpg");
     }
   }
+
   // КОНТЕНТ ПОВЕРХ ФОНА
-  &__promo-icon,
   &__promo-text {
     position: relative;
     z-index: 1;
-  }
-
-  &__promo-icon {
-    display: block;
-    margin: 0 auto 32px;
-  }
-
-  &__promo-text {
     font-size: 16px;
     line-height: 20px;
     text-align: center;
     color: $color-text-white;
     margin: 0;
   }
-  //Заказать
+
+  // КНОПКА "ЗАКАЗАТЬ"
   &__button {
     padding: 6px 109px;
     width: 280px;

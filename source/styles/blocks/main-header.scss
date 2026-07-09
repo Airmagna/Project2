@@ -1,17 +1,9 @@
-// .main-header {
-// }
-
-// .main-header__logo {
-// }
-
-// .logo {
-// }
-
-// .logo-link {
-// }
-
-// .logo__icon-mobile {
-// }
-
-// .logo__text {
-// }
+.main-header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background-color: #ffffff;
+  z-index: 100; // Поверх всего
+}

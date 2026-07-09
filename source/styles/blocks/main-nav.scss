@@ -1,20 +1,139 @@
 .main-nav {
-  // МЕНЮ НАВИГАЦИИ
-  &__list {
-    font-family: $primary-font;
+  // Кнопка бургер
+  &__toggle {
+    // замена бургера на крестик когда меню открыто
+    background: url("../../icons/burger_menu.svg") no-repeat center;
+    background-size: 18px;
+    cursor: pointer;
+    border: none;
+    margin: 0;
+    padding: 12px;
+    width: 40px;
+    height: 40px;
+    z-index: 101;
+    position: relative;
+    // меню открыто — показываем крестик
+    .show-menu & {
+      background: url("../../icons/cross-menu.svg") no-repeat center;
+      background-size: 18px;
+    }
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  // МОБИЛЬНОЕ МЕНЮ
+  &__mobile-menu {
+    // Скрыто по умолчанию
+    display: none;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+
+    background-color: #ffffff;
+    z-index: 99; // Под кнопкой бургер (101)
+    border-top: 1px solid #e6e6e6;
+
+    // Показывается когда есть класс show-menu
+    .show-menu & {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: slideDown 0.3s ease;
+    }
+
+    // Скрыто на планшете и десктопе
+    @media (min-width: 768px) {
+      display: none !important;
+    }
+  }
+
+  // СПИСОК МОБИЛЬНОГО МЕНЮ
+  &__mobile-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    text-align: center;
+    width: 100%;
+  }
+
+  &__mobile-item {
+    font-family: $second-font;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+    text-transform: uppercase;
+    width: 100%;
+    height: 66px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #e6e6e6;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__mobile-link {
+    display: block;
+    width: 100%;
+    font-family: $second-font;
     font-weight: 400;
     font-size: 20px;
     line-height: 20px;
     text-transform: uppercase;
     color: $color-text-black;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  // ДЕСКТОПНОЕ МЕНЮ
+  &__wrapper {
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  &__list {
+    font-family: $primary-font;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+    display: flex;
+    gap: 33px;
+    text-transform: uppercase;
+    color: $color-text-black;
     list-style: none;
   }
-  // МЕНЮ БУРГЕР
-  &__toggle {
-    background: url("../../icons/burger_menu.svg");
-    cursor: pointer;
-    border: none;
-    margin: 0;
-    padding: 12px;
+
+  &__link {
+    color: $color-text-black;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover,
+    &:focus {
+      opacity: 0.6;
+    }
+
+    &--current {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $bg-basic-green;
+      }
+    }
   }
 }
