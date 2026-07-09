@@ -19,8 +19,7 @@
 
     //МОБИЛЬНЫЙ: белый фон + зелёный только сверху
     background-color: #ffffff;
-    background-image:
-      $promo-overlay, url("../../images/hero-cat-background@1x.jpg");
+    background-image: $promo-overlay, url("../../images/hero-cat-background@1x.jpg");
     background-size: 100% 350px; // Зелёный только на 320px сверху
     background-position: top center;
     background-repeat: no-repeat;
@@ -31,8 +30,7 @@
 
     // Retina для мобильного
     @media (min-resolution: 192dpi) {
-      background-image:
-        $promo-overlay, url("../../images/hero-cat-background@2x.jpg");
+      background-image: $promo-overlay, url("../../images/hero-cat-background@2x.jpg");
     }
 
     // Планшет: убираем зелёный фон
@@ -94,7 +92,6 @@
   // СТАКАН (мобильный/планшет)
   &__picture--mobile {
     display: block;
-    // margin: 0px auto 30px;
     text-align: center;
 
     @media (min-width: 1200px) {

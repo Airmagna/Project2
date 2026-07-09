@@ -1,7 +1,6 @@
 .main-nav {
-  // Кнопка бургер
+  // КНОПКА БУРГЕР
   &__toggle {
-    // замена бургера на крестик когда меню открыто
     background: url("../../icons/burger_menu.svg") no-repeat center;
     background-size: 18px;
     cursor: pointer;
@@ -12,7 +11,7 @@
     height: 40px;
     z-index: 101;
     position: relative;
-    // меню открыто — показываем крестик
+
     .show-menu & {
       background: url("../../icons/cross-menu.svg") no-repeat center;
       background-size: 18px;
@@ -23,30 +22,31 @@
     }
   }
 
-  // МОБИЛЬНОЕ МЕНЮ
+  //  МОБИЛЬНОЕ МЕНЮ — ИСПРАВЛЕНО
   &__mobile-menu {
-    // Скрыто по умолчанию
+    // Скрыто по умолчанию на ВСЕХ версиях
     display: none;
     position: fixed;
     top: 70px;
     left: 0;
     width: 100%;
-
     background-color: #ffffff;
-    z-index: 99; // Под кнопкой бургер (101)
+    z-index: 99;
     border-top: 1px solid #e6e6e6;
 
-    // Показывается когда есть класс show-menu
-    .show-menu & {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      animation: slideDown 0.3s ease;
+    //  ПОКАЗЫВАЕМ ТОЛЬКО НА МОБИЛЬНОМ (< 768px) при show-menu
+    @media (max-width: 767px) {
+      .show-menu & {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        animation: slideDown 0.3s ease;
+      }
     }
 
-    // Скрыто на планшете и десктопе
+    // На планшете и десктопе — ВСЕГДА скрыто (даже с show-menu)
     @media (min-width: 768px) {
-      display: none !important;
+      display: none;
     }
   }
 
@@ -57,7 +57,7 @@
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 0px;
+    gap: 0;
     text-align: center;
     width: 100%;
   }
@@ -121,19 +121,19 @@
     &:focus {
       opacity: 0.6;
     }
+  }
 
-    &--current {
-      position: relative;
+  &__link--current {
+    position: relative;
 
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background-color: $bg-basic-green;
-      }
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $bg-basic-green;
     }
   }
 }
