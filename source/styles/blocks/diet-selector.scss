@@ -1,28 +1,123 @@
-.diet-selector__title {
-  font-family: $second-font;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 37px;
-  text-transform: uppercase;
-  color: #000000;
-}
+.diet-selector {
+  // ОБЩИЕ СТИЛИ
+  &__title,
+  &__link {
+    font-family: $second-font;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $color-text-black;
+  }
 
-.diet-selector__description {
-  font-size: 14px;
-  line-height: 18px;
-}
+  &__title {
+    font-size: 24px;
+    line-height: 37px;
+  }
 
-.diet-selector__link {
-  font-family: $second-font;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 16px;
-  text-transform: uppercase;
-  text-align: center;
-  color: #000000;
-}
+  &__description {
+    font-size: 14px;
+    line-height: 18px;
+  }
 
-.diet-selector__weight-loss,
-.diet-selector__musclee-gain {
-  background-color: #f2f2f2;
+  &__link {
+    font-size: 16px;
+    line-height: 16px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-decoration: none;
+
+    // Интерактив стрелки
+    &:hover .diet-selector__icon,
+    &:focus .diet-selector__icon {
+      transform-origin: left center;
+      transform: scaleX(1.35);
+    }
+  }
+
+  &__link:active {
+    opacity: 0.3;
+  }
+
+  &__icon {
+    // плавная анимация
+    transition: transform 0.3s ease;
+  }
+
+  // КАРТОЧКИ (общие стили)
+  &__weight-loss,
+  &__muscle-gain {
+    position: relative;
+    background-color: $bg-basic-grey;
+    padding: 30px 20px;
+    text-align: center;
+
+    //  ПСЕВДОЭЛЕМЕНТ ДЛЯ ИКОНКИ КОТА
+    &::before {
+      content: "";
+      display: block;
+      margin: 0 auto 30px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+
+  // ПОХУДЕНИЕ
+  &__weight-loss {
+    &::before {
+      width: 50px;
+      height: 54px;
+      background-image: url("../../icons/stack.svg#cat-slim");
+    }
+  }
+  // НАБОР МАССЫ
+  &__muscle-gain {
+    &::before {
+      width: 68px;
+      height: 50px;
+      background-image: url("../../icons/stack.svg#cat-muscle");
+    }
+  }
+
+  // ПЛАНШЕТ
+  @media (min-width: 768px) {
+    &__weight-loss,
+    &__muscle-gain {
+      padding: 50px 40px;
+    }
+
+    &__weight-loss::before {
+      width: 200px;
+      height: 210px;
+      margin-bottom: 40px;
+    }
+
+    &__muscle-gain::before {
+      width: 270px;
+      height: 200px;
+      margin-bottom: 40px;
+    }
+  }
+
+  // ДЕСКТОП
+  @media (min-width: 1200px) {
+    &__weight-loss,
+    &__muscle-gain {
+      padding: 60px 50px;
+    }
+
+    &__weight-loss::before {
+      width: 100px;
+      height: 106px;
+      margin-bottom: 50px;
+    }
+
+    &__muscle-gain::before {
+      width: 134px;
+      height: 100px;
+      margin-bottom: 50px;
+    }
+  }
 }

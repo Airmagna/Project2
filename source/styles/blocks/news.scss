@@ -1,39 +1,41 @@
-.news__title {
-  font-family: $second-font;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 24px;
-  text-align: center;
-  color: #000000;
-}
+// БЛОК: АКЦИИ И НОВИНКИ
 
-.news__description {
+.news {
   font-family: $second-font;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  text-align: center;
-  color: #000000;
-}
 
-.button--news {
-  font-family: $second-font;
-  padding: 14px 26px;
-  width: 280px;
-  font-size: 20px;
-  line-height: 26px;
-  text-transform: uppercase;
-  text-align: center;
-  color: #ffffff;
-}
+  // ЗАГОЛОВОК И ОПИСАНИЕ
+  &__title,
+  &__description {
+    font-weight: 400;
+    text-align: center;
+    color: $color-text-black;
+  }
 
-.field--catalog {
-  border: 1px solid #cdcdcd;
-  padding: 13px;
-  width: 280px;
-  font-family: $second-font;
-  font-weight: 400;
-  font-size: 20px;
-  text-transform: uppercase;
-  color: #444444;
+  &__title {
+    font-size: 24px;
+    line-height: 24px;
+  }
+
+  &__description {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  // КНОПКА ПОДПИСКИ
+  &__button {
+    padding: 14px 26px;
+    width: 280px;
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  // ПОЛЕ ВВОДА EMAIL
+  &__field {
+    border: 1px solid #cdcdcd;
+    padding: 13px;
+    width: 280px;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: $base-color-text;
+  }
 }

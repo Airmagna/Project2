@@ -1,27 +1,158 @@
-.hero__text {
-  background: rgba(104, 183, 56, 0.85);
-  width: 320px;
-  height: 302px;
-}
-
-.hero__title {
-  font-family: $second-font;
+// ГЛАВНЫЙ ЭКРАН
+.hero {
   font-weight: 400;
-  font-size: 36px;
-  line-height: 36px;
-  text-align: center;
-  color: #ffffff;
-}
 
-.hero__slogan {
-  font-family: $second-font;
-  font-size: 14px;
-  line-height: 14px;
-  text-transform: uppercase;
-  color: #ffffff;
-}
+  &__wrapper {
+    @media (min-width: 1200px) {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      min-height: 600px;
+      position: relative;
+    }
+  }
 
-.hero__button {
-  padding: 10px 44px;
-  width: 280px;
+  // ЛЕВАЯ КОЛОНКА
+  &__content {
+    position: relative;
+    padding: 0 20px;
+    text-align: center;
+
+    //МОБИЛЬНЫЙ: белый фон + зелёный только сверху
+    background-color: #ffffff;
+    background-image: $promo-overlay, url("../../images/hero-cat-background@1x.jpg");
+    background-size: 100% 350px; // Зелёный только на 320px сверху
+    background-position: top center;
+    background-repeat: no-repeat;
+
+    min-height: 300px;
+    padding-top: 65px;
+    padding-bottom: 30px;
+
+    // Retina для мобильного
+    @media (min-resolution: 192dpi) {
+      background-image: $promo-overlay, url("../../images/hero-cat-background@2x.jpg");
+    }
+
+    // Планшет: убираем зелёный фон
+    @media (min-width: 768px) {
+      background: none;
+      padding-top: 0;
+    }
+
+    // Десктоп: белый фон, выравнивание
+    @media (min-width: 1200px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 0 80px;
+      background-color: #ffffff;
+      min-height: 600px;
+    }
+  }
+
+  // ЗАГОЛОВОК
+  &__title {
+    font-family: $second-font;
+    font-size: 36px;
+    line-height: 36px;
+    margin: 0 0 20px;
+    color: $color-text-white;
+
+    @media (min-width: 768px) {
+      color: $color-text-black;
+    }
+
+    @media (min-width: 1200px) {
+      font-size: 60px;
+      line-height: 60px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__slogan {
+    font-family: $second-font;
+    font-size: 14px;
+    line-height: 14px;
+    text-transform: uppercase;
+    margin: 0 0 40px;
+    color: $color-text-white;
+
+    @media (min-width: 768px) {
+      color: $color-text-black;
+    }
+
+    @media (min-width: 1200px) {
+      font-size: 20px;
+      line-height: 20px;
+      margin-bottom: 50px;
+    }
+  }
+
+  // СТАКАН (мобильный/планшет)
+  &__picture--mobile {
+    display: block;
+    text-align: center;
+
+    @media (min-width: 1200px) {
+      display: none;
+    }
+  }
+
+  // СТАКАН (десктоп)
+  &__picture--desktop {
+    display: none;
+
+    @media (min-width: 1200px) {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+      width: 550px;
+      margin-left: -250px;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  &__button {
+    padding: 10px 44px;
+    width: 280px;
+    margin: 0 auto;
+
+    @media (min-width: 1200px) {
+      margin: 0;
+    }
+  }
+
+  // ПРАВАЯ КОЛОНКА (только для десктопа)
+  &__visual {
+    display: none;
+
+    @media (min-width: 1200px) {
+      display: block;
+      position: relative;
+      min-height: 600px;
+    }
+  }
+
+  &__background {
+    @media (min-width: 1200px) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        $promo-overlay,
+        url("../../images/hero-cat-background@1x.jpg") center / cover no-repeat;
+      z-index: 1;
+    }
+  }
 }
