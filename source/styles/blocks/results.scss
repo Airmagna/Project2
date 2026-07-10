@@ -51,6 +51,40 @@
 
   // ОБЁРТКА С ФОНОМ
   &__wrapper {
-    background: $background-results-gray;
+    background-color: $background-results-gray;
+  }
+
+  &__slider {
+    display: flex;
+  }
+
+  &__slider-button {
+    position: relative;
+    display: block;
+    width: 4px;
+    align-self: stretch;
+    background-color: $color-text-title;
+    padding: 0;
+    border: none;
+
+    &::before {
+      content: "";
+      background-image: url("../../icons/stack.svg#controls-slider");
+      display: block;
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      left: 50%;
+      top: 50%;
+    }
+  }
+
+  &__slider-button:hover {
+    background-color: $bg-basic-green;
+  }
+  &__slider-button:hover::before {
+    background-image: url("../../icons/stack.svg#sliders-control-green");
+    background-color: #eaeaea;
   }
 }

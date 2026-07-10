@@ -27,6 +27,20 @@
     justify-content: center;
     gap: 10px;
     text-decoration: none;
+
+    // Интерактив стрелки
+    &:hover .diet-selector__icon,
+    &:focus .diet-selector__icon {
+      transform-origin: left center;
+      transform: scaleX(1.35);
+    }
+  }
+  &__link:active {
+    opacity: 0.3;
+  }
+  &__icon {
+    // плавная анимация
+    transition: transform 0.3s ease;
   }
 
   // КАРТОЧКИ (общие стили)

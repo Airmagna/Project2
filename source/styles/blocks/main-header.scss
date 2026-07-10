@@ -6,4 +6,13 @@
   padding: 12px 20px;
   background-color: #ffffff;
   z-index: 100; // Поверх всего
+
+  &__logo:hover,
+  &__logo-text:hover {
+    opacity: 0.8;
+  }
+  &__logo:active,
+  &__logo-text:active {
+    opacity: 0.6;
+  }
 }
