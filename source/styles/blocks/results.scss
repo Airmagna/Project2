@@ -2,6 +2,8 @@
 
 .results {
   font-weight: 400;
+  background-color: $background-results-gray;
+  position: relative;
 
   // ЗАГОЛОВОК СЕКЦИИ
   &__title {
@@ -14,11 +16,23 @@
     font-size: 14px;
   }
 
+  &__stats {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 20px;
+  }
+
   // СТАТИСТИКА (fieldset)
   &__stat {
     font-family: $primary-font;
-    font-size: 12px;
+    font-size: 10px;
     line-height: 12px;
+    width: 124px;
+    align-items: center;
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+    border-radius: 5px;
   }
 
   // ЗНАЧЕНИЕ
@@ -32,6 +46,7 @@
     line-height: 20px;
     text-transform: uppercase;
     font-size: 14px;
+    margin-bottom: 20px;
   }
 
   &__title,
@@ -49,23 +64,66 @@
     text-align: center;
   }
 
-  // ОБЁРТКА С ФОНОМ
+  // ОБЁРТКА
   &__wrapper {
-    background-color: $background-results-gray;
+    width: 280px;
+    margin: 0 auto;
+    margin-bottom: 26px;
   }
 
   &__slider {
     display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  &__slider-container {
+    position: relative;
+    width: 280px;
+    height: 260px;
+    overflow: hidden;
+  }
+
+  &__slider-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    &-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    // ПОСЛЕ (нижний слой)
+    &--after {
+      z-index: 1;
+      clip-path: inset(0 0 0 50%); //  Обрезаем левую половину
+    }
+
+    // ДО (верхний слой, обрезаем пополам)
+    &--before {
+      z-index: 2;
+      clip-path: inset(0 50% 0 0); //  Обрезаем правую половину
+    }
   }
   // Полоска слайдера
+
+  // Полоска слайдера
   &__slider-button {
-    position: relative;
-    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%; //  Посередине
+    transform: translateX(-50%);
+    z-index: 3; // Поверх изображений
     width: 4px;
-    align-self: stretch;
+    height: 100%;
     background-color: $color-text-title;
-    padding: 0;
     border: none;
+    cursor: col-resize;
+
     // Кружок слайдера
     &::before {
       content: "";
@@ -74,18 +132,151 @@
       width: 40px;
       height: 40px;
       position: absolute;
-      transform: translate(-50%, -50%);
-      left: 50%;
       top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    &:hover {
+      background-color: $bg-basic-green;
+
+      &::before {
+        background-image: url("../../icons/stack.svg#sliders-control-green");
+      }
     }
   }
+  @media (min-width: $tablet-width) {
+    margin-bottom: 60px;
+    background-color: $color-text-white;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 55%; // 🔑 Серый фон занимает 60% высоты (под котом)
+      background-color: $background-results-gray;
+      z-index: 0; // Под контентом
+    }
 
-  &__slider-button:hover {
-    background-color: $bg-basic-green;
+    &__title {
+      font-size: 60px;
+      line-height: 60px;
+    }
+
+    &__description {
+      line-height: 24px;
+      font-size: 16px;
+    }
+
+    &__wrapper {
+      width: 708px;
+      margin: 0 auto;
+    }
+    &__container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    &__price {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      margin: 0;
+    }
+
+    &__slider-container {
+      width: 560px;
+      height: 510px;
+    }
   }
+  // ============================================================================
+  // ДЕСКТОП
+  // ============================================================================
+  @media (min-width: $desktop-width) {
+    width: 1440px;
+    margin: 0 auto;
+    background-color: $color-text-white;
 
-  &__slider-button:hover::before {
-    background-image: url("../../icons/stack.svg#sliders-control-green");
-    background-color: #eaeaea;
+    // Серый фон (оставляем как было, он работает отлично)
+    &::after {
+      height: 75%;
+    }
+
+    // Grid на уровне wrapper
+    &__wrapper {
+      width: 1220px;
+      margin: 0 auto; // Центрируем wrapper
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto auto; // 3 строки: заголовок, описание, блок с цифрами
+      gap: 40px 80px; // 40px между строками, 80px между колонками
+      position: relative;
+      z-index: 1;
+      padding-bottom: 76px;
+    }
+
+    // 1. Заголовок на всю ширину
+    &__title {
+      grid-column: 1 / -1;
+      grid-row: 1;
+      font-size: 60px;
+      line-height: 60px;
+      text-align: left;
+      margin: 0;
+    }
+
+    // 2. Описание в левой колонке
+    &__description {
+      grid-column: 1;
+      grid-row: 2;
+      max-width: 450px;
+      text-align: left;
+      margin: 0;
+    }
+
+    // 3. Контейнер со статистикой и ценой в левой колонке
+    &__container {
+      grid-column: 1;
+      grid-row: 3;
+      display: flex;
+      flex-direction: column;
+      gap: 40px; // Отступ между статистикой и ценой
+    }
+
+    &__stats {
+      margin-bottom: 0;
+      justify-content: flex-start;
+    }
+
+    &__stat {
+      font-size: 12px;
+      border-color: $base-color-text;
+    }
+
+    // 4. Цена (теперь она просто элемент внутри flex-контейнера &__container)
+    &__price {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start; // Выравниваем по левому краю (как в макете)
+      margin: 0;
+      padding-bottom: 20px;
+    }
+
+    // 5. Правая колонка (слайдер)
+    &__slider {
+      grid-column: 2;
+      grid-row: 1 / -1; // Начинается со 2-й строки и тянется до конца
+      margin: 0;
+      justify-content: flex-start; // Прижимаем к левому краю правой колонки
+    }
+
+    &__slider-container {
+      width: 560px;
+      height: 510px;
+    }
   }
 }

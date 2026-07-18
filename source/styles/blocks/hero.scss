@@ -2,25 +2,23 @@
 .hero {
   font-weight: 400;
 
+  //  БАЗА (МОБИЛЬНАЯ ВЕРСИЯ)
   &__wrapper {
-    @media (min-width: 1200px) {
-      display: grid;
-      grid-template-columns: 50% 50%;
-      min-height: 600px;
-      position: relative;
-    }
   }
 
-  // ЛЕВАЯ КОЛОНКА
+  // ЛЕВАЯ КОЛОНКА (на мобильном — единственная)
   &__content {
     position: relative;
-    padding: 0 20px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
     text-align: center;
 
-    //МОБИЛЬНЫЙ: белый фон + зелёный только сверху
+    // Белый фон + зелёный верх
     background-color: #ffffff;
-    background-image: $promo-overlay, url("../../images/hero-cat-background@1x.jpg");
-    background-size: 100% 350px; // Зелёный только на 320px сверху
+    background-image:
+      $promo-overlay, url("../../images/hero-cat-background@1x.jpg");
+    background-size: 100% 350px;
     background-position: top center;
     background-repeat: no-repeat;
 
@@ -30,24 +28,8 @@
 
     // Retina для мобильного
     @media (min-resolution: 192dpi) {
-      background-image: $promo-overlay, url("../../images/hero-cat-background@2x.jpg");
-    }
-
-    // Планшет: убираем зелёный фон
-    @media (min-width: 768px) {
-      background: none;
-      padding-top: 0;
-    }
-
-    // Десктоп: белый фон, выравнивание
-    @media (min-width: 1200px) {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 0 80px;
-      background-color: #ffffff;
-      min-height: 600px;
+      background-image:
+        $promo-overlay, url("../../images/hero-cat-background@2x.jpg");
     }
   }
 
@@ -56,63 +38,31 @@
     font-family: $second-font;
     font-size: 36px;
     line-height: 36px;
-    margin: 0 0 20px;
     color: $color-text-white;
-
-    @media (min-width: 768px) {
-      color: $color-text-black;
-    }
-
-    @media (min-width: 1200px) {
-      font-size: 60px;
-      line-height: 60px;
-      margin-bottom: 40px;
-    }
+    width: 250px;
+    margin: 0 auto;
+    margin-bottom: 20px;
   }
 
+  // СЛОГАН
   &__slogan {
     font-family: $second-font;
     font-size: 14px;
     line-height: 14px;
     text-transform: uppercase;
-    margin: 0 0 40px;
     color: $color-text-white;
-
-    @media (min-width: 768px) {
-      color: $color-text-black;
-    }
-
-    @media (min-width: 1200px) {
-      font-size: 20px;
-      line-height: 20px;
-      margin-bottom: 50px;
-    }
+    margin: 0 0 40px;
   }
 
-  // СТАКАН (мобильный/планшет)
+  // СТАКАН (мобильный)
   &__picture--mobile {
     display: block;
     text-align: center;
-
-    @media (min-width: 1200px) {
-      display: none;
-    }
   }
 
-  // СТАКАН (десктоп)
+  // СТАКАН (десктоп) — скрыт на мобильном
   &__picture--desktop {
     display: none;
-
-    @media (min-width: 1200px) {
-      display: block;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 3;
-      width: 550px;
-      margin-left: -250px;
-    }
   }
 
   &__image {
@@ -125,34 +75,342 @@
     padding: 10px 44px;
     width: 280px;
     margin: 0 auto;
+  }
 
-    @media (min-width: 1200px) {
+  // ПРАВАЯ КОЛОНКА (скрыта на мобильном)
+  &__visual {
+    display: none;
+  }
+
+  &__background {
+    // На мобильном не используется
+  }
+
+  // ============================================================================
+  // 2. ПЛАНШЕТ
+  // ============================================================================
+  @media (min-width: $tablet-width) {
+    &__wrapper {
+      width: 708px;
+      height: auto;
+      margin: 0 auto;
+      margin-bottom: 250px;
+    }
+
+    &__content {
+      background: none;
+      padding-top: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: start;
+      padding: 0;
       margin: 0;
+      margin-left: 80px;
+      gap: 40px;
+      position: relative; // 🔑 Для позиционирования стакана
+      min-height: 500px; // 🔑 Достаточно высоты
+    }
+
+    &__title {
+      margin: 0;
+      color: $color-text-black;
+      font-size: 60px;
+      line-height: 60px;
+      width: 420px;
+      position: relative;
+      z-index: 2; // 🔑 Поверх стакана
+    }
+
+    &__slogan {
+      margin: 0;
+      color: $color-text-black;
+      position: relative;
+      z-index: 2; // 🔑 Поверх стакана
+    }
+
+    // 🔑 КНОПКА ПОВЕРХ СТАКАНА
+    &__button {
+      position: relative;
+      margin: 0;
+      margin-top: 10px;
+      z-index: 2; // 🔑 Поверх стакана
+      align-self: flex-start; // 🔑 Выравнивание по левому краю
+    }
+
+    // &__image {
+    //   display: block;
+    //   width: 100%;
+    //   height: auto;
+    //   margin-bottom: 300px;
+    // }
+
+    // Стакан ПОД текстом и кнопкой
+    &__picture--mobile {
+      display: block;
+      width: 100%;
+      text-align: center;
+      position: absolute;
+      top: 200px; // 🔑 Сдвиг вниз
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1; // 🔑 Под текстом и кнопкой
+      margin: 0;
+      padding: 0;
     }
   }
 
-  // ПРАВАЯ КОЛОНКА (только для десктопа)
-  &__visual {
-    display: none;
+  // 3. ДЕСКТОП
+  @media (min-width: $desktop-width) {
+    &__wrapper {
+      width: 1220px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 50% 50%;
+      min-height: 600px;
+      position: relative;
+    }
 
-    @media (min-width: 1200px) {
+    &__content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: start;
+      padding: 0;
+      margin: 0;
+      margin-left: 80px;
+      gap: 40px;
+      background-color: #ffffff;
+      min-height: 600px;
+      margin-top: 110px;
+    }
+
+    &__title {
+      // margin: 110px 0 40px 80px;
+      padding: 0;
+      margin: 0;
+    }
+
+    &__slogan {
+      font-size: 20px;
+      line-height: 20px;
+      // margin: 0 0 50px 80px;
+      margin: 0;
+    }
+
+    &__button {
+      margin: 0;
+      // margin-left: 80px;
+    }
+
+    // Скрываем мобильный стакан
+    &__picture--mobile {
+      display: none;
+    }
+
+    // Показываем десктопный стакан
+    &__picture--desktop {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+      width: 550px;
+      margin-left: -200px;
+    }
+
+    // Показываем правую колонку
+    &__visual {
       display: block;
       position: relative;
       min-height: 600px;
     }
-  }
 
-  &__background {
-    @media (min-width: 1200px) {
+    // Фон для правой колонки
+    &__background {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
+      padding: 0;
+      top: -100px;
+      right: 120px;
+      left: 0px;
+      width: 720px;
       height: 100%;
       background:
         $promo-overlay,
-        url("../../images/hero-cat-background@1x.jpg") center / cover no-repeat;
+        url("../../images/hero-cat-background-desktop@1x.jpg") center / cover
+          no-repeat;
       z-index: 1;
+      @media (min-resolution: 2dppx) {
+        background:
+          $promo-overlay,
+          url("../../images/hero-cat-background-desktop@2x.jpg") center / cover
+            no-repeat;
+      }
     }
   }
 }
+
+// .hero {
+//   font-weight: 400;
+
+//   &__wrapper {
+//     @media (min-width: 1200px) {
+//       display: grid;
+//       grid-template-columns: 50% 50%;
+//       min-height: 600px;
+//       position: relative;
+//     }
+//   }
+
+//   // ЛЕВАЯ КОЛОНКА
+//   &__content {
+//     position: relative;
+//     padding: 0;
+//     display: flex;
+//     flex-direction: column;
+//     text-align: center;
+
+//     //МОБИЛЬНЫЙ: белый фон + зелёный только сверху
+//     background-color: #ffffff;
+//     background-image:
+//       $promo-overlay, url("../../images/hero-cat-background@1x.jpg");
+//     background-size: 100% 350px; // Зелёный только на 320px сверху
+//     background-position: top center;
+//     background-repeat: no-repeat;
+
+//     min-height: 300px;
+//     padding-top: 65px;
+//     padding-bottom: 30px;
+
+//     // Retina для мобильного
+//     @media (min-resolution: 192dpi) {
+//       background-image:
+//         $promo-overlay, url("../../images/hero-cat-background@2x.jpg");
+//     }
+
+//     // Планшет: убираем зелёный фон
+//     @media (min-width: 768px) {
+//       background: none;
+//       padding-top: 0;
+//     }
+
+//     // Десктоп: белый фон, выравнивание
+//     @media (min-width: 1200px) {
+//       display: flex;
+//       flex-direction: column;
+//       justify-content: center;
+//       align-items: flex-start;
+//       padding: 0 80px;
+//       background-color: #ffffff;
+//       min-height: 600px;
+//     }
+//   }
+
+//   // ЗАГОЛОВОК
+//   &__title {
+//     font-family: $second-font;
+//     font-size: 36px;
+//     line-height: 36px;
+//     margin: 0 0 20px;
+//     width: 250px;
+//     color: $color-text-white;
+//     margin: 0 auto;
+//     margin-bottom: 20px;
+
+//     @media (min-width: $tablet-width) {
+//       color: $color-text-black;
+//       font-size: 60px;
+//       line-height: 60px;
+//       width: 420px;
+//       margin-left: 120px;
+//       margin-bottom: 40px;
+//     }
+
+//     @media (min-width: $desktop-width) {
+//       margin-left: 190px;
+//     }
+//   }
+
+//   &__slogan {
+//     font-family: $second-font;
+//     font-size: 14px;
+//     line-height: 14px;
+//     text-transform: uppercase;
+//     margin: 0 0 40px;
+//     color: $color-text-white;
+
+//     @media (min-width: 768px) {
+//       color: $color-text-black;
+//     }
+
+//     @media (min-width: 1200px) {
+//       font-size: 20px;
+//       line-height: 20px;
+//       margin-bottom: 50px;
+//     }
+//   }
+
+//   // СТАКАН (мобильный/планшет)
+//   &__picture--mobile {
+//     display: block;
+//     text-align: center;
+
+//     @media (min-width: 1200px) {
+//       display: none;
+//     }
+//   }
+
+//   // СТАКАН (десктоп)
+//   &__picture--desktop {
+//     display: none;
+
+//     @media (min-width: 1200px) {
+//       display: block;
+//       position: absolute;
+//       top: 50%;
+//       left: 50%;
+//       transform: translate(-50%, -50%);
+//       z-index: 3;
+//       width: 550px;
+//       margin-left: -250px;
+//     }
+//   }
+
+//   &__image {
+//     display: block;
+//     width: 100%;
+//     height: auto;
+//   }
+
+//   &__button {
+//     padding: 10px 44px;
+//     width: 320px;
+//     margin: 0 auto;
+//   }
+
+//   // ПРАВАЯ КОЛОНКА (только для десктопа)
+//   &__visual {
+//     display: none;
+
+//     @media (min-width: 1200px) {
+//       display: block;
+//       position: relative;
+//       min-height: 600px;
+//     }
+//   }
+
+//   &__background {
+//     @media (min-width: 1200px) {
+//       position: absolute;
+//       top: 0;
+//       left: 0;
+//       width: 100%;
+//       height: 100%;
+//       background:
+//         $promo-overlay,
+//         url("../../images/hero-cat-background@1x.jpg") center / cover no-repeat;
+//       z-index: 1;
+//     }
+//   }
+// }
