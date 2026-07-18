@@ -2,10 +2,6 @@
 .hero {
   font-weight: 400;
 
-  //  БАЗА (МОБИЛЬНАЯ ВЕРСИЯ)
-  &__wrapper {
-  }
-
   // ЛЕВАЯ КОЛОНКА (на мобильном — единственная)
   &__content {
     position: relative;
@@ -16,8 +12,7 @@
 
     // Белый фон + зелёный верх
     background-color: #ffffff;
-    background-image:
-      $promo-overlay, url("../../images/hero-cat-background@1x.jpg");
+    background-image: $promo-overlay, url("../../images/hero-cat-background@1x.jpg");
     background-size: 100% 350px;
     background-position: top center;
     background-repeat: no-repeat;
@@ -28,8 +23,7 @@
 
     // Retina для мобильного
     @media (min-resolution: 192dpi) {
-      background-image:
-        $promo-overlay, url("../../images/hero-cat-background@2x.jpg");
+      background-image: $promo-overlay, url("../../images/hero-cat-background@2x.jpg");
     }
   }
 
@@ -93,7 +87,7 @@
 
     &__content {
       background: none;
-      padding-top: 0;
+      // padding-top: 0;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -223,14 +217,14 @@
       background:
         $promo-overlay,
         url("../../images/hero-cat-background-desktop@1x.jpg") center / cover
-          no-repeat;
+        no-repeat;
       z-index: 1;
 
       @media (min-resolution: 2dppx) {
         background:
           $promo-overlay,
           url("../../images/hero-cat-background-desktop@2x.jpg") center / cover
-            no-repeat;
+          no-repeat;
       }
     }
   }

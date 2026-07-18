@@ -17,12 +17,16 @@
     font-size: 24px;
     line-height: 37px;
     margin: 0;
+    grid-column: 2;
+    grid-row: 1;
   }
-
+  // Описание растягиваем на всю ширину
   &__description {
     font-size: 14px;
     line-height: 18px;
     margin: 0;
+    grid-column: 1 / -1;
+    grid-row: 2;
 
     // РАЗДЕЛИТЕЛЬНАЯ ЛИНИЯ (только на мобильном)
     &::after {
@@ -34,7 +38,7 @@
       margin: 20px 0;
     }
   }
-
+  // Ссылка растягиваем на всю ширину
   &__link {
     font-size: 16px;
     line-height: 16px;
@@ -42,6 +46,8 @@
     align-items: center;
     gap: 10px;
     text-decoration: none;
+    grid-column: 1 / -1;
+    grid-row: 3;
 
     &:hover .diet-selector__icon,
     &:focus .diet-selector__icon {
@@ -81,23 +87,6 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-  }
-
-  &__title {
-    grid-column: 2;
-    grid-row: 1;
-  }
-
-  // Описание растягиваем на всю ширину
-  &__description {
-    grid-column: 1 / -1;
-    grid-row: 2;
-  }
-
-  // Ссылка растягиваем на всю ширину
-  &__link {
-    grid-column: 1 / -1;
-    grid-row: 3;
   }
 
   // ПРИВЯЗКА ИКОНОК

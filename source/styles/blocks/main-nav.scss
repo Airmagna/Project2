@@ -168,10 +168,9 @@
       color: $color-text-white;
     }
 
-    &__link--current {
-      &::after {
-        background-color: $color-text-white;
-      }
+    &__link--current::after {
+      /* ✅ Уровень 2 */
+      background-color: $color-text-white;
     }
   }
 }
