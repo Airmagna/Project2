@@ -34,37 +34,3 @@
     justify-content: flex-start;
   }
 }
-
-// .main-header {
-//   width: 320px;
-//   position: relative;
-//   display: flex;
-//   // justify-content: space-between;
-//   align-items: center;
-//   padding: 12px 20px;
-//   background-color: #ffffff;
-//   z-index: 100; // Поверх всего
-
-//   @media (max-width: 1199px) {
-//     justify-content: space-between;
-//   }
-
-//   &__logo-text {
-//     @media (max-width: $mobile-width-only) {
-//     }
-
-//     @media (min-width: $tablet-width) {
-//       margin-left: 12px;
-//     }
-//   }
-
-//   &__logo:hover,
-//   &__logo-text:hover {
-//     opacity: 0.8;
-//   }
-
-//   &__logo:active,
-//   &__logo-text:active {
-//     opacity: 0.6;
-//   }
-// }
