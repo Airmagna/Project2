@@ -3,6 +3,18 @@
 .news {
   font-family: $second-font;
 
+  &__wrapper {
+    width: 280px;
+    margin: 0 auto;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
   // ЗАГОЛОВОК И ОПИСАНИЕ
   &__title,
   &__description {
@@ -14,11 +26,13 @@
   &__title {
     font-size: 24px;
     line-height: 24px;
+    text-align: left;
   }
 
   &__description {
     font-size: 16px;
     line-height: 24px;
+    margin-bottom: 8px;
   }
 
   // КНОПКА ПОДПИСКИ
@@ -33,9 +47,56 @@
   &__field {
     border: 1px solid #cdcdcd;
     padding: 13px;
-    width: 280px;
+    width: 254px;
     font-size: 20px;
     text-transform: uppercase;
     color: $base-color-text;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .news {
+    &__wrapper {
+      width: 632px;
+    }
+
+    &__title {
+      font-size: 32px;
+      line-height: 32px;
+      text-align: left;
+    }
+
+    &__description {
+      font-size: 24px;
+      line-height: 32px;
+    }
+
+    &__post {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__field {
+      width: 382px;
+      height: 56px;
+      padding: 0;
+      padding-left: 13px;
+    }
+
+    &__button {
+      width: 250px;
+    }
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .news {
+    &__wrapper {
+      width: 1220px;
+    }
+
+    &__post {
+      justify-content: center;
+    }
   }
 }

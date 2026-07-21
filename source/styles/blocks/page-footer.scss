@@ -1,4 +1,10 @@
 .page-footer {
+  &--catalog {
+    background-color: $bg-basic-grey;
+  }
+  // background-color: $bg-basic-grey;
+  margin: 0 auto;
+
   &__wrapper {
     width: 320px;
     margin: 0 auto;
@@ -12,6 +18,21 @@
     margin: 0 auto;
     display: flex;
     margin-bottom: 26px;
+    padding-top: 26px;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      margin-top: 26px;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%); //  Центрируем относительно родителя
+      width: 374.4px;
+      height: 560px;
+      background-color: $bg-basic-grey;
+      z-index: -1;
+    }
 
     // ЗАГОЛОВОК КОНТАКТОВ
     &-title {
@@ -37,7 +58,13 @@
     }
   }
 
+  // &__contact-catalog {
+  //   background-color: $background-results-gray;
+  // }
+
   &__map {
+    width: 320px;
+
     &-image {
       margin: 0 auto;
       margin-bottom: 40px;
@@ -85,6 +112,20 @@
       display: flex;
       margin-bottom: 26px;
       justify-content: space-between;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        margin-top: 26px;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%); //  Центрируем относительно родителя
+        width: 100vw;
+        height: 500px;
+        background-color: $bg-basic-grey;
+        z-index: -1;
+      }
 
       &-adress {
         display: flex;
@@ -136,6 +177,7 @@
       width: 1440px;
       margin: 0 auto;
       position: relative; // Для позиционирования контактов
+      background-color: $bg-basic-grey;
     }
 
     // 🔑 КОНТАКТЫ ПОВЕРХ КАРТЫ
@@ -148,6 +190,10 @@
       padding: 60px 80px;
       margin: 0;
       z-index: 10;
+
+      &::after {
+        display: none;
+      }
     }
   }
 }

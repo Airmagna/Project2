@@ -153,23 +153,64 @@
     }
   }
 
-  // ДЕСКТОП
   @media (min-width: $desktop-width) {
-    margin-left: 540px;
+    margin-left: auto;
+    // Скрываем бургер на десктопе
+    &__toggle {
+      display: none;
+    }
 
+    // Показываем десктопное меню
+    &__mobile-menu {
+      display: none;
+    }
+
+    &__wrapper {
+      display: block;
+    }
+
+    // Список навигации
     &__list {
+      display: flex;
+      gap: 33px;
       font-size: 20px;
       line-height: 20px;
       margin-left: 0;
       width: 480px;
+      list-style: none;
+      padding: 0;
     }
 
+    // ========================================================================
+    //  БАЗОВЫЕ СТИЛИ ДЛЯ ВСЕХ СТРАНИЦ (черный текст, зеленая линия)
+    // ========================================================================
     &__link {
-      color: $color-text-white;
+      color: $color-text-black;
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+
+      &:hover,
+      &:focus {
+        opacity: 0.6;
+      }
     }
 
     &__link--current::after {
-      /* ✅ Уровень 2 */
+      background-color: $bg-basic-green;
+    }
+  }
+}
+
+// ============================================================================
+//  ГЛАВНАЯ СТРАНИЦА - БЕЛЫЙ ТЕКСТ И БЕЛАЯ ЛИНИЯ (Десктоп)
+// ============================================================================
+@media (min-width: $desktop-width) {
+  .page-home {
+    .main-nav__link {
+      color: $color-text-white;
+    }
+
+    .main-nav__link--current::after {
       background-color: $color-text-white;
     }
   }
