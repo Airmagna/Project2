@@ -1,25 +1,199 @@
-// БЛОК: КОНТАКТЫ
+.page-footer {
+  &--catalog {
+    background-color: $bg-basic-grey;
+  }
+  // background-color: $bg-basic-grey;
+  margin: 0 auto;
 
-.contact {
-  font-weight: 400;
-
-  // ЗАГОЛОВОК КОНТАКТОВ
-  &__title {
-    margin: 0;
-    font-family: $second-font;
-    font-size: 16px;
-    line-height: 20px;
-    text-transform: uppercase;
-    color: $color-text-black;
+  &__wrapper {
+    width: 320px;
+    margin: 0 auto;
   }
 
-  // АДРЕС И ГОРОД
-  &__street,
-  &__city {
-    margin: 0;
-    font-family: $primary-font;
-    font-size: 14px;
-    line-height: 20px;
-    color: $base-color-text;
+  // БЛОК: КОНТАКТЫ
+  &__contact {
+    width: 280px;
+    font-weight: 400;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    margin-bottom: 26px;
+    padding-top: 26px;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      margin-top: 26px;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%); //  Центрируем относительно родителя
+      width: 374.4px;
+      height: 560px;
+      background-color: $bg-basic-grey;
+      z-index: -1;
+    }
+
+    // ЗАГОЛОВОК КОНТАКТОВ
+    &-title {
+      margin: 0;
+      padding: 0;
+      font-family: $second-font;
+      font-size: 16px;
+      line-height: 20px;
+      text-transform: uppercase;
+      color: $color-text-black;
+    }
+
+    // АДРЕС И ГОРОД
+    &-street,
+    &-city {
+      margin: 0;
+      padding: 0;
+      font-family: $primary-font;
+      font-size: 14px;
+      line-height: 20px;
+      color: $base-color-text;
+      width: 140px;
+    }
+  }
+
+  // &__contact-catalog {
+  //   background-color: $background-results-gray;
+  // }
+
+  &__map {
+    width: 320px;
+
+    &-image {
+      margin: 0 auto;
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.logo-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.social {
+  &__list {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    width: 132px;
+    justify-content: space-between;
+  }
+}
+
+.copyright {
+  display: flex;
+  align-items: center;
+  width: 280px;
+  justify-content: space-between;
+}
+
+@media (min-width: $tablet-width) {
+  .page-footer {
+    &__wrapper {
+      width: 768px;
+      margin: 0 auto;
+    }
+
+    // БЛОК: КОНТАКТЫ
+    &__contact {
+      width: 630px;
+      font-weight: 400;
+      padding: 0;
+      margin: 0 auto;
+      display: flex;
+      margin-bottom: 26px;
+      justify-content: space-between;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        margin-top: 26px;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%); //  Центрируем относительно родителя
+        width: 100vw;
+        height: 500px;
+        background-color: $bg-basic-grey;
+        z-index: -1;
+      }
+
+      &-adress {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      &-title {
+        margin: 0;
+        padding: 0;
+        font-size: 20px;
+        line-height: 26px;
+        width: 163px;
+      }
+
+      &-street,
+      &-city {
+        font-size: 16px;
+        line-height: 20px;
+        width: 160px;
+      }
+    }
+  }
+
+  .logo-footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 708px;
+    margin: 0 auto;
+
+    &__link {
+      width: 170px;
+    }
+  }
+
+  .copyright {
+    display: flex;
+    align-items: center;
+    width: 170px;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .page-footer {
+    &__wrapper {
+      width: 1440px;
+      margin: 0 auto;
+      position: relative; // Для позиционирования контактов
+      background-color: $bg-basic-grey;
+    }
+
+    //  КОНТАКТЫ ПОВЕРХ КАРТЫ
+    &__contact {
+      position: absolute;
+      top: 100px;
+      left: 110px;
+      width: 400px;
+      background-color: #ffffff;
+      padding: 60px 80px;
+      margin: 0;
+      z-index: 10;
+
+      &::after {
+        display: none;
+      }
+    }
   }
 }

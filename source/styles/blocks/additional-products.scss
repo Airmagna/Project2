@@ -1,34 +1,68 @@
 // ДОПОЛНИТЕЛЬНЫЕ ТОВАРЫ
-
 .additional-products {
+  // БАЗА (МОБИЛЬНАЯ ВЕРСИЯ)
   font-weight: 400;
+
+  &__container {
+    width: 280px;
+    margin: 0 auto;
+  }
 
   // ЗАГОЛОВОК СЕКЦИИ
   &__title {
+    position: relative;
     padding: 0;
     font-family: $second-font;
     font-size: 24px;
     line-height: 24px;
-    text-align: center;
+    text-align: start;
     color: $color-text-black;
+    margin-bottom: 50px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      margin-top: 35px;
+      left: 50%; // Центрируем линию относительно кнопки
+      transform: translateX(-50%);
+      width: 100%;
+      height: 1px;
+      background-color: $-special-grey-2;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+  }
+
+  // ПРОДУКТ И ЕГО ХАРАКТЕРИСТИКИ
+  &__row {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 32px;
+    font-family: $primary-font;
+    font-size: 14px;
+    line-height: 14px;
+    color: $base-color-text;
   }
 
   // НАЗВАНИЕ ТОВАРА
   &__name {
     font-family: $second-font;
-    font-size: 16px;
-    line-height: 16px;
-    text-transform: uppercase;
-    text-align: center;
-    color: $color-text-dark;
-  }
-
-  // ПРОДУКТ И ЕГО ХАРАКТЕРИСТИКИ
-  &__row {
-    font-family: $primary-font;
     font-size: 14px;
     line-height: 14px;
-    color: $base-color-text;
+    text-transform: uppercase;
+    text-align: start;
+    color: $color-text-dark;
+
+    &-pack {
+      display: flex;
+      justify-content: space-between;
+      width: 280px;
+    }
   }
 
   // ПРОМО-БЛОК (ПОДАРОК)
@@ -38,7 +72,7 @@
     text-align: center;
     overflow: hidden;
 
-    //  ПСЕВДОЭЛЕМЕНТ ДЛЯ ИКОНКИ ПОДАРКА
+    // ИКОНКА ПОДАРКА
     &::before {
       content: "";
       display: block;
@@ -68,28 +102,11 @@
     background-repeat: no-repeat;
     z-index: 0;
   }
+
   // Мобильная Retina
   @media (min-resolution: 192dpi) {
     &__promo-bg {
       background-image: $promo-overlay, url("../../images/promo-cat@2x.jpg");
-    }
-  }
-  // Планшет
-  @media (min-width: 768px) {
-    &__promo-bg {
-      background-image: $promo-overlay, url("../../images/promo-cat-tablet@1x.jpg");
-    }
-    //  Планшет: увеличиваем иконку подарка
-    &__promo::before {
-      width: 80px;
-      height: 83px;
-      margin-bottom: 40px;
-    }
-  }
-  // Планшет Retina
-  @media (min-width: 768px) and (min-resolution: 192dpi) {
-    &__promo-bg {
-      background-image: $promo-overlay, url("../../images/promo-cat-tablet@2x.jpg");
     }
   }
 
@@ -101,12 +118,172 @@
     line-height: 20px;
     text-align: center;
     color: $color-text-white;
-    margin: 0;
+    width: 160px;
+    margin: 0 auto;
   }
 
-  // КНОПКА "ЗАКАЗАТЬ"
+  // ЗАКАЗАТЬ
   &__button {
     padding: 6px 109px;
     width: 280px;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      margin-top: 20px;
+      left: 50%; // Центрируем линию относительно кнопки
+      transform: translateX(-50%);
+      width: 100%;
+      height: 1px;
+      background-color: $-special-grey-2;
+    }
+  }
+
+  // ПЛАНШЕТ
+  @media (min-width: $tablet-width) {
+    width: 708px;
+    margin: 0 auto;
+
+    &__container {
+      width: 630px;
+      margin: 0 auto;
+    }
+
+    &__title {
+      font-size: 32px;
+      line-height: 32px;
+    }
+
+    &__title::after {
+      margin-top: 35px;
+      width: 708px;
+    }
+
+    &__row-text {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__name {
+      font-size: 16px;
+      line-height: 16px;
+      white-space: nowrap;
+    }
+
+    &__name-pack {
+      display: flex;
+      justify-content: flex-end;
+      gap: 50px;
+      width: 630px;
+    }
+
+    &__promo {
+      display: flex;
+      align-items: center;
+    }
+
+    // Иконка подарка больше (перенесено из отдельного медиа-запроса)
+
+    &__promo::before {
+      width: 80px;
+      height: 83px;
+      margin-bottom: 40px;
+    }
+
+    // &__promo-bg {
+    //   // Планшет обычный
+    //   background-image:
+    //     $promo-overlay, url("../../images/promo-cat-tablet@1x.jpg");
+    // }
+
+    // Планшет Retina
+    @media (min-width: $tablet-width) and (min-resolution: 192dpi) {
+      &__promo-bg {
+        background-image: $promo-overlay, url("../../images/promo-cat-tablet@2x.jpg");
+        max-height: 200px;
+      }
+    }
+
+    &__button {
+      margin: 0 auto;
+      width: 632px;
+    }
+
+    &__button::after {
+      width: 708px;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 1220px;
+    margin: 0 auto;
+
+    &__container {
+      margin: 0;
+      width: 1220px;
+      display: flex;
+      align-items: center;
+      gap: 80px;
+    }
+
+    &__wrapper {
+      align-items: center;
+    }
+
+    // &__title {
+
+    // }
+
+    &__title::after {
+      display: none;
+    }
+
+    &__list {
+      width: 896px;
+    }
+
+    &__row {
+      flex-direction: row;
+      gap: 20px;
+    }
+
+    &__row:last-child {
+      margin-bottom: 0;
+    }
+
+    &__row-text {
+      gap: 160px;
+    }
+
+    &__name {
+      min-width: 160px;
+    }
+
+    &__name-pack {
+      justify-content: space-between;
+      margin-left: auto;
+      width: 290px;
+    }
+
+    &__promo {
+      flex-direction: column;
+      width: 245px;
+    }
+
+    // &__promo-bg {
+
+    // }
+
+    &__button {
+      width: 245px;
+      margin: 0;
+      margin-left: auto;
+    }
+
+    &__button::after {
+      display: none;
+    }
   }
 }

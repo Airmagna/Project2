@@ -1,11 +1,14 @@
 .main-header {
+  //  БАЗА (МОБИЛЬНАЯ ВЕРСИЯ)
+  padding-bottom: 14px;
+  width: 280px;
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 20px;
-  background-color: #ffffff;
-  z-index: 100; // Поверх всего
+  background-color: transparent;
+  z-index: 100;
+  margin: 0 auto;
 
   &__logo:hover,
   &__logo-text:hover {
@@ -15,5 +18,19 @@
   &__logo:active,
   &__logo-text:active {
     opacity: 0.6;
+  }
+
+  // ПЛАНШЕТ
+  @media (min-width: $tablet-width) {
+    width: 705px;
+
+    &__logo-text {
+      margin-left: 12px;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 1220px;
+    justify-content: flex-start;
   }
 }
