@@ -219,8 +219,8 @@
 
   .catalog__list {
     display: grid;
-    grid-template-columns: 245px 245px 245px 245px; // Две равные колонки
-    gap: 80px; // Отступ между карточками
-    width: 100%; // Занимает всю ширину контейнера
+    grid-template-columns: 245px 245px 245px 245px;
+    gap: 80px;
+    width: 100%;
   }
 }
