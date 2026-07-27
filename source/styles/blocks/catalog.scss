@@ -155,9 +155,9 @@
 
   .catalog__list {
     display: grid;
-    grid-template-columns: 320px 320px; // Две равные колонки
-    gap: 60px; // Отступ между карточками
-    width: 100%; // Занимает всю ширину контейнера
+    grid-template-columns: 320px 320px;
+    gap: 60px;
+    width: 100%;
     justify-content: center;
   }
 

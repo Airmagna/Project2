@@ -224,8 +224,8 @@
 
 @media (min-width: $desktop-width) {
   .page-footer {
-    width: 1440px; // 🔑 Как в .results
-    margin: 0 auto; // Центрируем сам футер
+    width: 1440px;
+    margin: 0 auto;
 
     &__wrapper {
       width: 100%; // Занимает всю ширину 1440px
