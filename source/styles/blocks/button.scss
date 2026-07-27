@@ -9,4 +9,13 @@
   background-color: $bg-basic-green;
   border: none;
   cursor: pointer;
+
+  &:hover {
+    background-color: $-basic-green-2;
+  }
+
+  &:active {
+    background-color: $-basic-green-2;
+    color: rgba($color-text-white, 0.3);
+  }
 }
