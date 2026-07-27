@@ -119,10 +119,6 @@
   &__link:active {
     opacity: 0.3;
   }
-
-  &__link--html-text:active {
-    opacity: 0.3;
-  }
 }
 
 .copyright {
@@ -131,16 +127,31 @@
   width: 280px;
   justify-content: space-between;
 
-  .social__link--html {
+  .copyright__link--html {
+    display: block;
     width: 27px;
     height: 34px;
+    background-color: $color-text-title;
+    transition: background-color 0.3s ease;
     mask-image: url("../../icons/stack.svg#html");
+    mask-size: contain;
+    mask-position: center;
+    mask-repeat: no-repeat;
+
+    &:hover,
+    &:focus {
+      background-color: $bg-basic-green;
+    }
   }
 
-  .social__link--html-text {
+  .copyright__link--text {
     width: 115px;
     height: 20px;
     background-image: url("../../icons/stack.svg#HTMLT");
+  }
+
+  &__link--text:active {
+    opacity: 0.3;
   }
 }
 
