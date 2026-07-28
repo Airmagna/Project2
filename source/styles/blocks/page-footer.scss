@@ -1,9 +1,9 @@
 .page-footer {
+  width: 100%;
+
   &--catalog {
     background-color: $bg-basic-grey;
   }
-  // background-color: $bg-basic-grey;
-  margin: 0 auto;
 
   &__wrapper {
     width: 320px;
@@ -20,19 +20,6 @@
     margin-bottom: 26px;
     padding-top: 26px;
     position: relative;
-
-    &::after {
-      content: "";
-      position: absolute;
-      margin-top: 26px;
-      top: 100%;
-      left: 50%;
-      transform: translateX(-50%); //  Центрируем относительно родителя
-      width: 374.4px;
-      height: 560px;
-      background-color: $bg-basic-grey;
-      z-index: -1;
-    }
 
     // ЗАГОЛОВОК КОНТАКТОВ
     &-title {
@@ -58,15 +45,19 @@
     }
   }
 
-  // &__contact-catalog {
-  //   background-color: $background-results-gray;
-  // }
-
   &__map {
-    width: 320px;
+    // РАСТЯГИВАЕМ НА ВСЮ ШИРИНУ ЭКРАНА
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
 
     &-image {
-      margin: 0 auto;
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0;
       margin-bottom: 40px;
     }
   }
@@ -77,6 +68,10 @@
   flex-direction: column;
   align-items: center;
   gap: 20px;
+
+  &__link:active {
+    opacity: 0.3;
+  }
 }
 
 .social {
@@ -87,6 +82,43 @@
     width: 132px;
     justify-content: space-between;
   }
+
+  &__link {
+    display: block;
+    width: 28px;
+    height: 22px;
+    background-color: $color-text-title;
+    transition: background-color 0.3s ease;
+
+    // НАСТРОЙКИ МАСКИ (общие для всех иконок)
+
+    //  префиксы для Safari
+    mask-size: contain;
+    mask-position: center;
+    mask-repeat: no-repeat;
+  }
+
+  // ПРИВЯЗКА ИКОНОК К МАСКЕ
+  &__link--vk {
+    mask-image: url("../../icons/stack.svg#vk");
+  }
+
+  &__link--youtube {
+    mask-image: url("../../icons/stack.svg#you");
+  }
+
+  &__link--telegram {
+    mask-image: url("../../icons/stack.svg#tg");
+  }
+
+  &__link:hover,
+  &__link:focus {
+    background-color: $bg-basic-green;
+  }
+
+  &__link:active {
+    opacity: 0.3;
+  }
 }
 
 .copyright {
@@ -94,6 +126,33 @@
   align-items: center;
   width: 280px;
   justify-content: space-between;
+
+  .copyright__link--html {
+    display: block;
+    width: 27px;
+    height: 34px;
+    background-color: $color-text-title;
+    transition: background-color 0.3s ease;
+    mask-image: url("../../icons/stack.svg#html");
+    mask-size: contain;
+    mask-position: center;
+    mask-repeat: no-repeat;
+
+    &:hover,
+    &:focus {
+      background-color: $bg-basic-green;
+    }
+  }
+
+  .copyright__link--text {
+    width: 115px;
+    height: 20px;
+    background-image: url("../../icons/stack.svg#HTMLT");
+  }
+
+  &__link--text:active {
+    opacity: 0.3;
+  }
 }
 
 @media (min-width: $tablet-width) {
@@ -107,25 +166,12 @@
     &__contact {
       width: 630px;
       font-weight: 400;
-      padding: 0;
+      // padding: 60px 0;
       margin: 0 auto;
+      margin-bottom: 60px;
       display: flex;
-      margin-bottom: 26px;
       justify-content: space-between;
       position: relative;
-
-      &::after {
-        content: "";
-        position: absolute;
-        margin-top: 26px;
-        top: 100%;
-        left: 50%;
-        transform: translateX(-50%); //  Центрируем относительно родителя
-        width: 100vw;
-        height: 500px;
-        background-color: $bg-basic-grey;
-        z-index: -1;
-      }
 
       &-adress {
         display: flex;
@@ -146,6 +192,22 @@
         font-size: 16px;
         line-height: 20px;
         width: 160px;
+      }
+    }
+
+    &__map {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      margin-left: -50vw; // Компенсация
+      margin-right: -50vw;
+
+      &-image {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        margin: 0;
+        margin-bottom: 40px;
       }
     }
   }
@@ -173,10 +235,12 @@
 
 @media (min-width: $desktop-width) {
   .page-footer {
+    width: 1440px;
+    margin: 0 auto;
+
     &__wrapper {
-      width: 1440px;
-      margin: 0 auto;
-      position: relative; // Для позиционирования контактов
+      width: 100%;
+      position: relative;
       background-color: $bg-basic-grey;
     }
 
@@ -194,6 +258,13 @@
       &::after {
         display: none;
       }
+    }
+
+    &__map {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+      position: static;
     }
   }
 }

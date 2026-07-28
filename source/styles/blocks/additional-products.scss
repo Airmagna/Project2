@@ -1,40 +1,65 @@
 // ДОПОЛНИТЕЛЬНЫЕ ТОВАРЫ
 .additional-products {
+  width: 280px;
+  margin: 0 auto;
   // БАЗА (МОБИЛЬНАЯ ВЕРСИЯ)
   font-weight: 400;
+  position: relative;
+  margin-bottom: 40px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: $bg-basic-green;
+    z-index: -1;
+  }
+
+  // ЗАГОЛОВОК СЕКЦИИ
+  &__title {
+    display: inline-block;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    font-family: $second-font;
+    font-size: 24px;
+    line-height: 24px;
+    color: $color-text-black;
+    margin-bottom: 50px;
+    z-index: 3;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0 -20px; // Выступает на 20px слева
+      background-color: $color-text-white;
+      z-index: -2; // Фон под текстом, но над линией
+    }
+  }
 
   &__container {
     width: 280px;
     margin: 0 auto;
   }
 
-  // ЗАГОЛОВОК СЕКЦИИ
-  &__title {
-    position: relative;
+  &__list {
+    list-style: none;
     padding: 0;
-    font-family: $second-font;
-    font-size: 24px;
-    line-height: 24px;
-    text-align: start;
-    color: $color-text-black;
-    margin-bottom: 50px;
+    position: relative;
 
-    &::after {
+    &::before {
       content: "";
       position: absolute;
-      top: 100%;
-      margin-top: 35px;
+      top: -15px;
       left: 50%; // Центрируем линию относительно кнопки
       transform: translateX(-50%);
       width: 100%;
       height: 1px;
       background-color: $-special-grey-2;
     }
-  }
-
-  &__list {
-    list-style: none;
-    padding: 0;
   }
 
   // ПРОДУКТ И ЕГО ХАРАКТЕРИСТИКИ
@@ -47,6 +72,12 @@
     font-size: 14px;
     line-height: 14px;
     color: $base-color-text;
+
+    &-text {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
   }
 
   // НАЗВАНИЕ ТОВАРА
@@ -143,8 +174,13 @@
 
   // ПЛАНШЕТ
   @media (min-width: $tablet-width) {
-    width: 708px;
+    width: 768px;
     margin: 0 auto;
+
+    &__wrapper {
+      width: 708px;
+      margin: 0 auto;
+    }
 
     &__container {
       width: 630px;
@@ -152,23 +188,22 @@
     }
 
     &__title {
-      font-size: 32px;
-      line-height: 32px;
-    }
-
-    &__title::after {
-      margin-top: 35px;
-      width: 708px;
+      font-size: 40px;
+      line-height: 40px;
+      margin: 0;
+      padding: 0;
+      margin-bottom: 50px;
     }
 
     &__row-text {
       display: flex;
       justify-content: space-between;
+      flex-direction: row;
     }
 
     &__name {
-      font-size: 16px;
-      line-height: 16px;
+      font-size: 20px;
+      line-height: 20px;
       white-space: nowrap;
     }
 
@@ -176,6 +211,8 @@
       display: flex;
       justify-content: flex-end;
       gap: 50px;
+      font-size: 16px;
+      line-height: 20px;
       width: 630px;
     }
 
@@ -191,12 +228,6 @@
       height: 83px;
       margin-bottom: 40px;
     }
-
-    // &__promo-bg {
-    //   // Планшет обычный
-    //   background-image:
-    //     $promo-overlay, url("../../images/promo-cat-tablet@1x.jpg");
-    // }
 
     // Планшет Retina
     @media (min-width: $tablet-width) and (min-resolution: 192dpi) {
@@ -217,8 +248,15 @@
   }
 
   @media (min-width: $desktop-width) {
-    width: 1220px;
-    margin: 0 auto;
+    width: 1440px;
+
+    margin-bottom: 90px;
+
+    &__wrapper {
+      width: 1220px;
+      margin: 0 auto;
+      align-items: center;
+    }
 
     &__container {
       margin: 0;
@@ -228,20 +266,23 @@
       gap: 80px;
     }
 
-    &__wrapper {
-      align-items: center;
-    }
-
-    // &__title {
-
-    // }
-
-    &__title::after {
-      display: none;
-    }
-
     &__list {
       width: 896px;
+    }
+
+    &__list::before {
+      top: -40px;
+    }
+
+    &__list::after {
+      content: "";
+      position: absolute;
+      bottom: -35px;
+      left: 50%; // Центрируем линию относительно кнопки
+      transform: translateX(-50%);
+      width: 100%;
+      height: 1px;
+      background-color: $-special-grey-2;
     }
 
     &__row {
@@ -272,14 +313,9 @@
       width: 245px;
     }
 
-    // &__promo-bg {
-
-    // }
-
     &__button {
       width: 245px;
-      margin: 0;
-      margin-left: auto;
+      padding: 6px 0;
     }
 
     &__button::after {
