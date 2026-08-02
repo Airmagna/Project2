@@ -24,8 +24,8 @@
   // Мобильное меню (скрыто по умолчанию)
   &__mobile-menu {
     display: none;
-    position: fixed;
-    top: 60px;
+    position: absolute;
+    top: 50px;
     left: 0;
     width: 100%;
     background-color: #ffffff;
@@ -186,6 +186,7 @@
       color: $color-text-black;
       text-decoration: none;
       transition: opacity 0.2s ease;
+      z-index: 3;
 
       &:hover,
       &:focus {

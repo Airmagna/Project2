@@ -1,9 +1,5 @@
 .diet-selector {
   //  БАЗА (МОБИЛЬНАЯ ВЕРСИЯ) + ОБЩИЕ СТИЛИ
-  &__wrapper {
-    width: 280px;
-    margin: 0 auto;
-  }
 
   &__title,
   &__link {
@@ -104,14 +100,9 @@
   @media (min-width: $tablet-width) {
     padding-bottom: 20px;
 
-    &__wrapper {
-      width: 708px;
-      margin: 0 auto;
-    }
-
     &__weight-loss,
     &__muscle-gain {
-      grid-template-columns: 340px 1fr;
+      grid-template-columns: 1fr 1fr;
       padding: 50px 40px;
       gap: 15px 40px;
       align-items: start; // На планшете выравниваем по верху
@@ -163,21 +154,35 @@
   //  ДЕСКТОП
   @media (min-width: $desktop-width) {
     &__wrapper {
-      width: 1220px;
-      margin: 0 auto;
       display: flex;
-      gap: 80px;
+      justify-content: space-between;
+      gap: 5px;
     }
 
     &__weight-loss,
     &__muscle-gain {
-      padding: 60px 50px;
-      width: 570px;
+      grid-template-columns: 35% auto;
+      grid-template-rows: auto auto auto;
+      gap: 20px;
+      align-items: center;
+      width: 500px;
     }
 
     &__cat-icon {
+      grid-column: 1;
+      grid-row: 1;
       width: 100px;
       height: 106px;
+    }
+
+    &__title {
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    &__description {
+      grid-column: 1 / -1;
+      grid-row: 2;
     }
 
     &__muscle-gain &__cat-icon {

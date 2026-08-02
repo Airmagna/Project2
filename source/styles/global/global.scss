@@ -1,6 +1,40 @@
 /* здесь используйте глобальные селекторы img, body, html и так далее */
-.page__body {
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.page-catalog,
+.page-home {
   font-family: $primary-font;
   font-weight: 400;
   color: $base-color-text;
+  margin: 0;
+  padding: 0;
+}
+
+// УНИВЕРСАЛЬНЫЙ КОНТЕЙНЕР
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+// Планшет
+@media (min-width: $tablet-width) {
+  .container {
+    padding: 0 30px;
+  }
+}
+
+// Десктоп
+@media (min-width: $desktop-width) {
+  .container {
+    padding: 0 110px;
+  }
 }
