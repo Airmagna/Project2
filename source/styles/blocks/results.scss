@@ -248,16 +248,12 @@
 
     // Grid на уровне wrapper
     &__wrapper {
-      // width: 1220px;
-      // margin: 0 auto;
-      // padding: 0 110px;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto auto auto; // 3 строки: заголовок, описание, блок с цифрами
+      grid-template-rows: auto auto auto;
       gap: 40px 80px;
       position: relative;
       z-index: 1;
-      // padding-bottom: 76px;
     }
 
     // 1. Заголовок на всю ширину

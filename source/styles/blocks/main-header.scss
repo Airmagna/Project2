@@ -1,7 +1,7 @@
 .main-header {
   //  БАЗА (МОБИЛЬНАЯ ВЕРСИЯ) //
   top: 0;
-  padding-bottom: 14px;
+  padding: 0 20px 14px;
   width: 100%;
   position: relative;
   display: flex;
@@ -10,7 +10,6 @@
   background-color: transparent;
   z-index: 100;
   margin: 0 auto;
-  padding: 0 20px;
 
   // &__logo {
 
