@@ -1,7 +1,5 @@
 // ДОПОЛНИТЕЛЬНЫЕ ТОВАРЫ
 .additional-products {
-  width: 280px;
-  margin: 0 auto;
   // БАЗА (МОБИЛЬНАЯ ВЕРСИЯ)
   font-weight: 400;
   position: relative;
@@ -41,8 +39,8 @@
   }
 
   &__container {
-    width: 280px;
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
   }
 
   &__list {
@@ -92,7 +90,7 @@
     &-pack {
       display: flex;
       justify-content: space-between;
-      width: 280px;
+      width: 100%;
     }
   }
 
@@ -156,7 +154,7 @@
   // ЗАКАЗАТЬ
   &__button {
     padding: 6px 109px;
-    width: 280px;
+    width: 100%;
     position: relative;
 
     &::after {
@@ -174,26 +172,30 @@
 
   // ПЛАНШЕТ
   @media (min-width: $tablet-width) {
-    width: 768px;
-    margin: 0 auto;
+    // width: 768px;
+    // margin: 0 auto;
 
     &__wrapper {
-      width: 708px;
-      margin: 0 auto;
+      padding: 0;
+      padding: 0 90px;
     }
 
-    &__container {
-      width: 630px;
-      margin: 0 auto;
-    }
+    // &__container {
+    //   width: 630px;
+    //   margin: 0 auto;
+    // }
 
     &__title {
       font-size: 40px;
       line-height: 40px;
       margin: 0;
-      padding: 0;
+
       margin-bottom: 50px;
     }
+
+    // &__row {
+    //   padding: 0 60px;
+    // }
 
     &__row-text {
       display: flex;
@@ -232,14 +234,14 @@
     // Планшет Retina
     @media (min-width: $tablet-width) and (min-resolution: 192dpi) {
       &__promo-bg {
-        background-image: $promo-overlay, url("../../images/promo-cat-tablet@2x.jpg");
-        max-height: 200px;
+        background-image:
+          $promo-overlay, url("../../images/promo-cat-tablet@2x.jpg");
       }
     }
 
     &__button {
       margin: 0 auto;
-      width: 632px;
+      width: 100%;
     }
 
     &__button::after {
@@ -248,26 +250,21 @@
   }
 
   @media (min-width: $desktop-width) {
-    width: 1440px;
-
     margin-bottom: 90px;
 
-    &__wrapper {
-      width: 1220px;
-      margin: 0 auto;
-      align-items: center;
-    }
+    // &__wrapper {
+    //   width: 1220px;
+    //   margin: 0 auto;
+    //   align-items: center;
+    // }
 
     &__container {
-      margin: 0;
-      width: 1220px;
-      display: flex;
-      align-items: center;
+      flex-direction: row;
       gap: 80px;
     }
 
     &__list {
-      width: 896px;
+      width: 100%;
     }
 
     &__list::before {
@@ -295,7 +292,7 @@
     }
 
     &__row-text {
-      gap: 160px;
+      width: 100%;
     }
 
     &__name {
@@ -310,7 +307,11 @@
 
     &__promo {
       flex-direction: column;
-      width: 245px;
+      width: 100%;
+    }
+
+    &__promo-bg {
+      background-image: $promo-overlay, url("../../images/promo-cat@2x.jpg");
     }
 
     &__button {

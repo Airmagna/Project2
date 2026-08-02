@@ -1,20 +1,19 @@
 .how-it-works {
   margin-bottom: 50px;
 
-  &__wrapper {
-    width: 280px;
-    margin: 0 auto;
-  }
+  // &__wrapper {
+  //   width: 280px;
+  //   padding: 0 20px;
+  // }
   // ЗАГОЛОВОК СЕКЦИИ
   &__title {
-    width: 225px;
     margin: 0;
     padding: 0;
     margin-bottom: 40px;
     font-family: $second-font;
     font-size: 36px;
     line-height: 40px;
-    text-align: center;
+
     color: $color-text-black;
   }
 
@@ -48,29 +47,49 @@
     align-items: center;
     justify-content: center;
     background-color: $bg-basic-green;
+
     height: 60px;
     // margin-bottom: 20px;
   }
   // Иконка без фона, только размеры
   &__icon {
+    // background: url("../../icons/stack.svg#list-icon") no-repeat center;
     width: 60px;
     height: 30px;
     display: block;
+  }
+
+  &__icon-list {
+    background: url("../../icons/stack.svg#list-icon") no-repeat center;
+  }
+  &__icon-powder {
+    background: url("../../icons/stack.svg#powder-icon") no-repeat center;
+  }
+  &__icon-eat {
+    background: url("../../icons/stack.svg#eat-icon") no-repeat center;
+  }
+  &__icon-time {
+    background: url("../../icons/stack.svg#time-icon") no-repeat center;
   }
 
   // Планшет и десктоп
   @media (min-width: $tablet-width) {
     margin-bottom: 70px;
 
-    &__wrapper {
-      width: 708px;
-    }
+    // &__wrapper {
+    //   width: 708px;
+    //   margin: 0 auto;
+    //   padding: 0 30px;
+    // }
 
     &__icon-wrapper {
       width: 80px;
       height: 80px;
     }
-
+    &__title {
+      font-size: 60px;
+      line-height: 60px;
+    }
     &__list {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -128,9 +147,11 @@
   }
 
   @media (min-width: $desktop-width) {
-    &__wrapper {
-      width: 1220px;
-    }
+    // &__wrapper {
+    //   width: 1220px;
+    //   padding: 0 110px;
+    //   margin: 0 auto;
+    // }
 
     &__list {
       display: flex;
