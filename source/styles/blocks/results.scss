@@ -31,10 +31,9 @@
     justify-content: space-evenly;
   }
 
-  // СТАТИСТИКА (fieldset)
-  // СТАТИСТИКА (fieldset)
+  // СТАТИСТИКА
   &__stat {
-    position: relative; // 🔑 Обязательно для позиционирования label
+    position: relative;
     font-family: $primary-font;
     font-size: 10px;
     line-height: 12px;
@@ -43,10 +42,10 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    // 🔑 ОДНА РАМКА ВОКРУГ ВСЕГО БЛОКА
+    // ОДНА РАМКА ВОКРУГ ВСЕГО БЛОКА
     border: 1px solid $color-text-title;
     border-radius: 5px;
-    padding: 15px 1px 10px; // Внутренние отступы
+    padding: 15px 1px 10px;
   }
 
   &__stats-container {
@@ -67,13 +66,13 @@
 
   // ПОДПИСЬ (затрачено времени / снижение веса)
   &__stat-label {
-    position: absolute; // 🔑 Абсолютное позиционирование
-    bottom: -6px; // 🔑 Сдвигаем вниз за пределы рамки
-    left: 50%; // 🔑 Центрируем по горизонтали
-    transform: translateX(-50%); // 🔑 Точное центрирование
-    background-color: $background-results-gray; // 🔑 Белый фон перекрывает рамку
-    padding: 0 10px; // Отступы по бокам
-    white-space: nowrap; // Запрещаем перенос текста
+    position: absolute;
+    bottom: -6px; // за пределы рамки
+    left: 50%; //  Центрирую по горизонтали
+    transform: translateX(-50%);
+    background-color: $background-results-gray; // Белый фон перекрывает рамку
+    padding: 0 10px;
+    white-space: nowrap;
     margin: 0;
     font-size: 10px;
     line-height: 12px;
@@ -105,10 +104,6 @@
 
   // ОБЁРТКА
   &__wrapper {
-    // width: 280px;
-    // margin: 0;
-    // margin: 0 auto;
-    // padding: 0 20px;
     margin-bottom: 26px;
   }
 
@@ -205,12 +200,6 @@
       background-color: $background-results-gray;
       z-index: 0; // Под контентом
     }
-
-    // &__wrapper {
-    //   width: 708px;
-    //   margin: 0 auto;
-    //   padding: 0 30px;
-    // }
 
     &__title {
       font-size: 60px;
@@ -342,8 +331,6 @@
     }
 
     &__slider {
-      grid-column: 2;
-      grid-row: 1 / -1; // Начинается со 2-й строки и тянется до конца
       margin: 0;
       justify-content: flex-start;
     }

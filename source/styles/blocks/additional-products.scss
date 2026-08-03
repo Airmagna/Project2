@@ -1,4 +1,3 @@
-// ДОПОЛНИТЕЛЬНЫЕ ТОВАРЫ
 .additional-products {
   // БАЗА (МОБИЛЬНАЯ ВЕРСИЯ)
   font-weight: 400;
@@ -184,10 +183,6 @@
       margin-bottom: 50px;
     }
 
-    // &__row {
-    //   padding: 0 60px;
-    // }
-
     &__row-text {
       display: flex;
       justify-content: space-between;
@@ -225,7 +220,8 @@
     // Планшет Retina
     @media (min-width: $tablet-width) and (min-resolution: 192dpi) {
       &__promo-bg {
-        background-image: $promo-overlay, url("../../images/promo-cat-tablet@2x.jpg");
+        background-image:
+          $promo-overlay, url("../../images/promo-cat-tablet@2x.jpg");
       }
     }
 

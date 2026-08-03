@@ -29,7 +29,6 @@
   &__item {
     display: flex;
     flex-direction: row;
-    // justify-content: normal;
     gap: 20px;
   }
 
@@ -43,13 +42,10 @@
     align-items: center;
     justify-content: center;
     background-color: $bg-basic-green;
-
     height: 60px;
-    // margin-bottom: 20px;
   }
   // Иконка без фона, только размеры
   &__icon {
-    // background: url("../../icons/stack.svg#list-icon") no-repeat center;
     width: 60px;
     height: 30px;
     display: block;
