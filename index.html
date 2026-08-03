@@ -52,6 +52,7 @@
   <header class="main-header">
 
     <!-- Лого -->
+    <!-- <div class="main-header__logo-container"> -->
     <div class="main-header__logo logo">
       <a
         class="logo__link"
@@ -95,6 +96,7 @@
         alt="Cat Energy"
       >
     </a>
+    <!-- </div> -->
 
     <!-- НАВИГАЦИЯ -->
     <!-- добавить show-menu для показа меню -->
@@ -350,30 +352,35 @@
     <!-- ЖИВОЙ ПРИМЕР -->
     <section class="results">
       <div class="results__wrapper container">
-        <h2 class="results__title">Живой пример</h2>
-        <p class="results__description">
-          Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на
-          Cat Energy Slim. Отличный результат без изнуряющих тренировок! При
-          этом он не менял своих привычек и по-прежнему спит по 16 часов в
-          день.
-        </p>
-        <div class="results__container">
-          <div class="results__stats">
-            <fieldset class="results__stat">
-              <legend class="results__stat-label">Снижение веса</legend>
-              <div class="results__stat-value">5 КГ</div>
-            </fieldset>
-            <fieldset class="results__stat">
-              <legend class="results__stat-label">Затрачено времени</legend>
-              <div class="results__stat-value">60 ДНЕЙ</div>
-            </fieldset>
-          </div>
-          <div class="results__price">
-            <span class="results__price-label">Затраты на питание:</span>
-            <span class="results__price-value">15 000 руб.</span>
+        <div class="results__text">
+          <h2 class="results__title">Живой пример</h2>
+          <p class="results__description">
+            Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на
+            Cat Energy Slim. Отличный результат без изнуряющих тренировок! При
+            этом он не менял своих привычек и по-прежнему спит по 16 часов в
+            день.
+          </p>
+          <div class="results__container">
+            <div class="results__stats">
+              <div class="results__stats-container">
+                <div class="results__stat">
+                  <div class="results__stat-value">5 КГ</div>
+                  <div class="results__stat-label">Снижение веса</div>
+                </div>
+                <div class="results__stat">
+                  <div class="results__stat-value">60 ДНЕЙ</div>
+                  <div class="results__stat-label">Затрачено времени</div>
+                </div>
+              </div>
+              <div class="results__price">
+                <span class="results__price-label">Затраты на питание:</span>
+                <span class="results__price-value">15 000 руб.</span>
+              </div>
+            </div>
           </div>
         </div>
         <div class="results__slider">
+
           <div class="results__slider-container">
             <picture class="results__slider-image results__slider-image--after">
               <source
@@ -417,6 +424,7 @@
             </button>
           </div>
         </div>
+
 
       </div>
     </section>
