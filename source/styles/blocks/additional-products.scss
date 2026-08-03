@@ -220,8 +220,7 @@
     // Планшет Retina
     @media (min-width: $tablet-width) and (min-resolution: 192dpi) {
       &__promo-bg {
-        background-image:
-          $promo-overlay, url("../../images/promo-cat-tablet@2x.jpg");
+        background-image: $promo-overlay, url("../../images/promo-cat-tablet@2x.jpg");
       }
     }
 
