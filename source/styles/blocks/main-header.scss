@@ -11,9 +11,10 @@
   z-index: 100;
   margin: 0 auto;
 
-  // &__logo {
-
-  // }
+  &__logo-container {
+    display: flex;
+    align-items: center;
+  }
 
   &__logo:hover,
   &__logo-text:hover {
@@ -27,7 +28,7 @@
 
   // ПЛАНШЕТ
   @media (min-width: $tablet-width) {
-    width: 705px;
+    width: 100%;
     padding: 0 30px;
 
     &__logo-text {
@@ -36,7 +37,7 @@
   }
 
   @media (min-width: $desktop-width) {
-    width: 1200px;
+    max-width: 1440px;
     justify-content: flex-start;
     padding: 0 110px;
   }

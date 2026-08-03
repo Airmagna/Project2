@@ -29,7 +29,6 @@
   &__item {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
     gap: 20px;
   }
 
@@ -43,13 +42,10 @@
     align-items: center;
     justify-content: center;
     background-color: $bg-basic-green;
-
     height: 60px;
-    // margin-bottom: 20px;
   }
   // Иконка без фона, только размеры
   &__icon {
-    // background: url("../../icons/stack.svg#list-icon") no-repeat center;
     width: 60px;
     height: 30px;
     display: block;
@@ -89,7 +85,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: auto auto;
-      gap: 100px 150px;
+      justify-content: space-between;
       position: relative;
       counter-reset: step-counter; //  Устанавливаю счетчик на родителе
       margin-bottom: 140px;

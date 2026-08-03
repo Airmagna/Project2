@@ -25,13 +25,15 @@
 
   &__stats {
     display: flex;
+    flex-direction: column;
     gap: 32px;
     margin-bottom: 20px;
     justify-content: space-evenly;
   }
 
-  // СТАТИСТИКА (fieldset)
+  // СТАТИСТИКА
   &__stat {
+    position: relative;
     font-family: $primary-font;
     font-size: 10px;
     line-height: 12px;
@@ -40,17 +42,41 @@
     display: flex;
     flex-direction: column;
     text-align: center;
+    // ОДНА РАМКА ВОКРУГ ВСЕГО БЛОКА
+    border: 1px solid $color-text-title;
     border-radius: 5px;
+    padding: 15px 1px 10px;
+  }
+
+  &__stats-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
   }
 
   // ЗНАЧЕНИЕ
   &__stat-value {
     font-size: 24px;
     line-height: 24px;
+    font-family: $second-font;
+    color: $color-text-black;
+    white-space: nowrap;
+    margin: 0;
   }
 
+  // ПОДПИСЬ (затрачено времени / снижение веса)
   &__stat-label {
+    position: absolute;
+    bottom: -6px; // за пределы рамки
+    left: 50%; //  Центрирую по горизонтали
+    transform: translateX(-50%);
+    background-color: $background-results-gray; // Белый фон перекрывает рамку
+    padding: 0 10px;
+    white-space: nowrap;
     margin: 0;
+    font-size: 10px;
+    line-height: 12px;
+    color: $base-color-text;
   }
 
   // ЦЕНА
@@ -78,10 +104,6 @@
 
   // ОБЁРТКА
   &__wrapper {
-    // width: 280px;
-    // margin: 0;
-    // margin: 0 auto;
-    // padding: 0 20px;
     margin-bottom: 26px;
   }
 
@@ -179,12 +201,6 @@
       z-index: 0; // Под контентом
     }
 
-    // &__wrapper {
-    //   width: 708px;
-    //   margin: 0 auto;
-    //   padding: 0 30px;
-    // }
-
     &__title {
       font-size: 60px;
       line-height: 60px;
@@ -206,6 +222,7 @@
       justify-content: space-between;
       align-items: flex-start;
       margin-bottom: 90px;
+      flex-direction: column;
     }
 
     &__stat {
@@ -214,9 +231,19 @@
       width: 162px;
     }
 
+    &__stats {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+    }
+
     &__stat-value {
       font-size: 30px;
       line-height: 37px;
+    }
+
+    &__stat-label {
+      background-color: $color-text-white;
     }
 
     &__price {
@@ -246,48 +273,44 @@
       bottom: -30px;
     }
 
-    // Grid на уровне wrapper
     &__wrapper {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto auto auto;
+      display: flex;
+      justify-content: space-between;
       gap: 40px 80px;
       position: relative;
       z-index: 1;
     }
 
-    // 1. Заголовок на всю ширину
     &__title {
-      grid-column: 1 / -1;
-      grid-row: 1;
       font-size: 60px;
       line-height: 60px;
       text-align: left;
       margin: 0;
+      margin-bottom: 140px;
     }
 
-    // 2. Описание в левой колонке
     &__description {
-      grid-column: 1;
-      grid-row: 2;
       max-width: 450px;
       text-align: left;
       margin: 0;
-      margin-top: 120px;
+      margin-bottom: 70px;
     }
 
-    // 3. Контейнер со статистикой и ценой в левой колонке
     &__container {
-      grid-column: 1;
-      grid-row: 3;
       display: flex;
       flex-direction: column;
       gap: 40px; // Отступ между статистикой и ценой
+      margin-bottom: 70px;
     }
 
     &__stats {
       margin-bottom: 0;
       justify-content: flex-start;
+      flex-direction: column;
+    }
+
+    &__stats-container {
+      justify-content: space-between;
     }
 
     &__stat {
@@ -295,17 +318,19 @@
       border-color: $base-color-text;
     }
 
+    &__stat-label {
+      background-color: $background-results-gray;
+    }
+
     &__price {
       display: flex;
       flex-direction: row;
       align-items: flex-start;
       margin: 0;
-      padding-bottom: 20px;
+      justify-content: space-between;
     }
 
     &__slider {
-      grid-column: 2;
-      grid-row: 1 / -1; // Начинается со 2-й строки и тянется до конца
       margin: 0;
       justify-content: flex-start;
     }
