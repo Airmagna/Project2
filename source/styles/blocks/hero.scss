@@ -59,7 +59,7 @@
 
   &__button {
     padding: 10px 44px;
-    width: 280px;
+    width: 100%;
     margin: 0 auto;
   }
 
@@ -155,7 +155,7 @@
       flex-direction: column;
       align-items: flex-start;
       text-align: start;
-      padding: 0;
+      padding: 60px 0 0;
       margin: 0;
       margin-left: 80px;
       gap: 40px;
